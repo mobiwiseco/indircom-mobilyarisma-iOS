@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Fabric
+import TwitterKit
+import SwifteriOS
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,13 +24,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBLoginView.self
         FBProfilePictureView.self
         
+        Fabric.with([Twitter()])
+        
+        
+        // Whenever a person opens app, check for a cached session
+        if (FBSession.activeSession().state == FBSessionState.OpenTokenExtended) {
+            
+            // If there's one, just open the session silently, without showing the user the login UI
+            FBSession.openActiveSessionWithReadPermissions(["public_profile","email"] , allowLoginUI: true, completionHandler: { (session : FBSession!, state : FBSessionState!, error : NSError!) -> Void in
+                
+                self.sessionStateChanged(session, state: state, error: error)
+                
+                //[appDelegate sessionStateChanged:session state:state error:error];
+                
+            })
+        }
+        
+         return true
+    }
+
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: NSString?, annotation: AnyObject) -> Bool
+    {
+        var wasHandled:Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
+    
         return true
     }
-    
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: NSString?, annotation: AnyObject) -> Bool {
-    var wasHandled:Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
-    return wasHandled
-    }
+   
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -49,7 +73,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    /*
+    
+    func openActiveSessionWithPermissions(permissions : [String] , allowLoginUI : Bool)
+    {
+        FBSession.openActiveSessionWithReadPermissions(permissions, allowLoginUI: allowLoginUI) { (session : FBSession!, status : FBSessionState!, error : NSError!) -> Void in
+            
+            var sessionStateInfo = [session : "session", status :"status" , error : "error", nil]
+            
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("SessionStateChangeNotification", object: nil, userInfo: nil)
+        }
+    }
+        */
+    
+    func sessionStateChanged(session : FBSession, state : FBSessionState, error : NSError?)
+    {
+        // If the session was opened successfully
+        if  state == FBSessionState.Open
+        {
+            println("Session Opened")
+        }
+        // If the session closed
+        if state == FBSessionState.Closed
+        {
+            println("Closed")
+        }
+    }
 
 }
 

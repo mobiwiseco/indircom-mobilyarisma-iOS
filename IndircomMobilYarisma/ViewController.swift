@@ -7,32 +7,50 @@
 //
 
 import UIKit
+import TwitterKit
+import Accounts
+import Social
 
 
+class ViewController: UIViewController{
 
-class ViewController: UIViewController,FBLoginViewDelegate{
 
-    @IBOutlet var fbLoginView: FBLoginView!
-    
+    var appDelegate : AppDelegate!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        self.fbLoginView = FBLoginView()
-        self.fbLoginView.delegate = self
-
-        
+       
     }
-
-    override func didReceiveMemoryWarning() {
+    
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func twitterLogInTapped(sender: AnyObject)
+    {
+        
+        Twitter.sharedInstance().logInWithCompletion {
+            (session, error) -> Void in
+            if (session != nil) {
+                println("signed in as \(session.userName)");
+                println("user ID :  \(session.userID)");
+                
+                self.alertWithTitle("Twitter", message: "You are logged in")
 
+            } else {
+                println("error: \(error.localizedDescription)");
+            }
+        }
+        
+    }
 
     // Facebook Delegate Methods
-    
+    /*
     func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
         println("User Logged In")
     }
@@ -45,13 +63,44 @@ class ViewController: UIViewController,FBLoginViewDelegate{
     }
     
     func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
-        println("User Logged Out")
+         println("User Logged Out")
     }
     
     func loginView(loginView : FBLoginView!, handleError:NSError) {
         println("Error: \(handleError.localizedDescription)")
     }
-
+*/
+    
+    func alertWithTitle(title: String, message: String) {
+        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func loginWithFacebook(sender: AnyObject)
+    {
+     
+        if (FBSession.activeSession().state == FBSessionState.Open || FBSession.activeSession().state == FBSessionState.OpenTokenExtended)
+        {
+            // Close the session and remove the access token from the cache
+            // The session state handler (in the app delegate) will be called automatically
+            FBSession.activeSession().closeAndClearTokenInformation()
+        }
+        else
+        {
+            // Open a session showing the user the login UI
+            // You must ALWAYS ask for public_profile permissions when opening a session
+            FBSession.openActiveSessionWithReadPermissions(["public_profile"], allowLoginUI: true, completionHandler: {
+                (session:FBSession!, state:FBSessionState, error:NSError!) in
+                
+                let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
+                appDelegate.sessionStateChanged(session, state: state, error: error)
+            })
+        }
+    }
+    
+ 
     
 }
 

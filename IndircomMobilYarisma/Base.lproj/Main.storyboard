@@ -16,24 +16,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJl-ff-jh0" customClass="FBLoginView">
-                                <rect key="frame" x="140" y="520" width="320" height="80"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3Y-Yh-ItG">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="fTc-83-VbF"/>
-                                    <constraint firstAttribute="width" constant="320" id="kPF-NV-a4P"/>
+                                    <constraint firstAttribute="height" constant="60" id="Ldr-FW-lbA"/>
                                 </constraints>
-                            </view>
+                                <state key="normal" title="Twitter log in">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twitterLogInTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hoh-zc-oa8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rje-x1-2to">
+                                <rect key="frame" x="0.0" y="472" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="rfK-EG-KtJ"/>
+                                </constraints>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginWithFacebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sC0-Mu-mA7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="EJl-ff-jh0" secondAttribute="bottom" id="Fpi-yq-feW"/>
-                            <constraint firstAttribute="centerX" secondItem="EJl-ff-jh0" secondAttribute="centerX" id="H3W-Jq-YGR"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="p3Y-Yh-ItG" secondAttribute="bottom" id="2s0-Nf-l4d"/>
+                            <constraint firstAttribute="centerY" secondItem="Rje-x1-2to" secondAttribute="centerY" id="6zQ-0z-8G4"/>
+                            <constraint firstAttribute="trailing" secondItem="Rje-x1-2to" secondAttribute="trailing" id="QiP-Lq-YJD"/>
+                            <constraint firstAttribute="trailing" secondItem="p3Y-Yh-ItG" secondAttribute="trailing" id="m2k-tC-PEK"/>
+                            <constraint firstItem="p3Y-Yh-ItG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="oYO-VY-wBF"/>
+                            <constraint firstItem="p3Y-Yh-ItG" firstAttribute="top" secondItem="Rje-x1-2to" secondAttribute="bottom" constant="8" id="uZV-bH-DlU"/>
+                            <constraint firstAttribute="centerX" secondItem="Rje-x1-2to" secondAttribute="centerX" id="x69-11-eIX"/>
+                            <constraint firstItem="Rje-x1-2to" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="xJv-bW-Y2e"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6zQ-0z-8G4"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <connections>
-                        <outlet property="fbLoginView" destination="EJl-ff-jh0" id="D0B-eH-BJW"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
