@@ -88,19 +88,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
         */
     
-    func sessionStateChanged(session : FBSession, state : FBSessionState, error : NSError?)
-    {
-        // If the session was opened successfully
-        if  state == FBSessionState.Open
-        {
-            println("Session Opened")
+    func sessionStateChanged(session:FBSession, state:FBSessionState, error:NSError?){
+        if ((error) != nil){
+            NSLog("Error")
+            FBSession.activeSession().closeAndClearTokenInformation()
         }
-        // If the session closed
-        if state == FBSessionState.Closed
-        {
-            println("Closed")
+        else{
+            if (state == FBSessionState.Open){
+                //I would like to get the user token or FBGraphUser here but i don't know how
+            }
+            
+        }
+        if (state == FBSessionState.Closed || state == FBSessionState.ClosedLoginFailed){
+            NSLog("Session Clossed")
+        }
+        if (FBErrorUtility.shouldNotifyUserForError(error) == true){
+            NSLog("Something went wrong")
+        }
+        else{
+            if (FBErrorUtility.errorCategoryForError(error) == FBErrorCategory.UserCancelled){
+                NSLog("User cancelled login")
+            }
+            else if (FBErrorUtility.errorCategoryForError(error) == FBErrorCategory.AuthenticationReopenSession){
+                NSLog("Current session is no valid")
+            }
         }
     }
-
 }
 

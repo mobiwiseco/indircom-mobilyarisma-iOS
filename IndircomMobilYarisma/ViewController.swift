@@ -8,21 +8,19 @@
 
 import UIKit
 import TwitterKit
-import Accounts
-import Social
+import Alamofire
 
 
-class ViewController: UIViewController{
 
 
-    var appDelegate : AppDelegate!
-
+class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-       
+        
+        
+    
     }
     
         override func didReceiveMemoryWarning() {
@@ -40,8 +38,10 @@ class ViewController: UIViewController{
                 println("signed in as \(session.userName)");
                 println("user ID :  \(session.userID)");
                 
-                self.alertWithTitle("Twitter", message: "You are logged in")
-
+               // self.alertWithTitle("Twitter", message: "You are logged in")
+                
+                self.goDetailPage()
+                
             } else {
                 println("error: \(error.localizedDescription)");
             }
@@ -50,26 +50,26 @@ class ViewController: UIViewController{
     }
 
     // Facebook Delegate Methods
-    /*
-    func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
-        println("User Logged In")
-    }
     
-    func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
-        println("User: \(user)")
-        println("User ID: \(user.objectID)")
-        println("User Name: \(user.name)")
-        
-    }
-    
-    func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
-         println("User Logged Out")
-    }
-    
-    func loginView(loginView : FBLoginView!, handleError:NSError) {
-        println("Error: \(handleError.localizedDescription)")
-    }
-*/
+//    func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
+//        println("User Logged In")
+//    }
+//    
+//    func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
+//        println("User: \(user)")
+//        println("User ID: \(user.objectID)")
+//        println("User Name: \(user.name)")
+//        
+//    }
+//    
+//    func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
+//         println("User Logged Out")
+//    }
+//    
+//    func loginView(loginView : FBLoginView!, handleError:NSError) {
+//        println("Error: \(handleError.localizedDescription)")
+//    }
+
     
     func alertWithTitle(title: String, message: String) {
         var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -96,10 +96,49 @@ class ViewController: UIViewController{
                 let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
                 // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
                 appDelegate.sessionStateChanged(session, state: state, error: error)
+                
+                
+                let request = FBRequest(session: FBSession.activeSession(), graphPath: "/me")
+                request.startWithCompletionHandler({ (connection, result, error) -> Void in
+                    
+                    println(result)
+                   
+                })
+                
             })
         }
     }
     
+//    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        
+//        if segue.identifier == "DetailPageVC"
+//        {
+//            let vc = segue.destinationViewController as DetailPageVC
+//            
+//        }
+//    
+//    }
+    
+    
+    func goDetailPage()
+    {
+        self.performSegueWithIdentifier("DetailPageVC", sender: self)
+    }
+    
+    
+    func registerUser()
+    {
+        Alamofire.request(.POST, "rezervasyon?key=f9a3226fc9fbd886c59a707ed7bd16ed", parameters: nil
+            )
+            .response {(request, response, _, error) in
+                if error == nil{
+                   
+                } else {
+                    
+                }
+        }
+    }
  
     
 }

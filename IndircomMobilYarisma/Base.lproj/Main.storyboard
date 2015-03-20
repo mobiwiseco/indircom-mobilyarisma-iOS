@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y2a-Ma-3pR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -16,51 +16,184 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3Y-Yh-ItG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blue.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SJ0-6n-DX3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNx-VC-QdR">
+                                <rect key="frame" x="0.0" y="480" width="600" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter ile giriş" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWJ-Uq-DVP">
+                                        <rect key="frame" x="264" y="19" width="109" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="YAa-9y-vXk">
+                                        <rect key="frame" x="226" y="15" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="0oO-Lp-sjj"/>
+                                            <constraint firstAttribute="height" constant="30" id="Ddv-HM-gPM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rje-x1-2to">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="twitterLogInTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FJa-M3-5zh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.67450980392156867" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="CWJ-Uq-DVP" firstAttribute="leading" secondItem="YAa-9y-vXk" secondAttribute="trailing" constant="8" id="1cA-DZ-XKx"/>
+                                    <constraint firstAttribute="centerX" secondItem="CWJ-Uq-DVP" secondAttribute="centerX" constant="-19" id="A7p-jV-Fmu"/>
+                                    <constraint firstItem="YAa-9y-vXk" firstAttribute="top" secondItem="KNx-VC-QdR" secondAttribute="top" constant="15" id="W7l-Ua-7gE"/>
+                                    <constraint firstAttribute="bottom" secondItem="YAa-9y-vXk" secondAttribute="bottom" constant="15" id="Y1U-hC-tDC"/>
+                                    <constraint firstAttribute="height" constant="60" id="fyt-GB-HV6"/>
+                                    <constraint firstAttribute="centerY" secondItem="CWJ-Uq-DVP" secondAttribute="centerY" id="iny-5J-lho"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTk-9F-uhO">
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Qf-JA-kV3">
+                                        <rect key="frame" x="215" y="15" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Dhs-iM-IuJ"/>
+                                            <constraint firstAttribute="width" constant="30" id="lRT-qE-JM9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook ile giriş" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-lw-s30">
+                                        <rect key="frame" x="252" y="20" width="134.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3Y-Yh-ItG">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginWithFacebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UJd-FB-j2C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Ldr-FW-lbA"/>
+                                    <constraint firstAttribute="centerX" secondItem="hIP-lw-s30" secondAttribute="centerX" constant="-19" id="LR8-1j-aTC"/>
+                                    <constraint firstAttribute="height" constant="60" id="Pri-Uc-TgY"/>
+                                    <constraint firstItem="hIP-lw-s30" firstAttribute="leading" secondItem="1Qf-JA-kV3" secondAttribute="trailing" constant="7.5" id="SSf-RL-lKR"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Qf-JA-kV3" secondAttribute="bottom" constant="15" id="ZO6-5J-zTM"/>
+                                    <constraint firstItem="1Qf-JA-kV3" firstAttribute="top" secondItem="iTk-9F-uhO" secondAttribute="top" constant="15" id="doY-dJ-0O2"/>
+                                    <constraint firstAttribute="centerY" secondItem="hIP-lw-s30" secondAttribute="centerY" id="r9c-vs-eoA"/>
                                 </constraints>
-                                <state key="normal" title="Twitter log in">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="twitterLogInTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hoh-zc-oa8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rje-x1-2to">
-                                <rect key="frame" x="0.0" y="472" width="600" height="60"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indircom_ust_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="2DL-zP-HEa">
+                                <rect key="frame" x="225" y="40" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="rfK-EG-KtJ"/>
+                                    <constraint firstAttribute="height" constant="150" id="5MY-BB-d76"/>
+                                    <constraint firstAttribute="width" constant="150" id="eFo-nJ-TWS"/>
                                 </constraints>
-                                <state key="normal" title="Login with Facebook">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginWithFacebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sC0-Mu-mA7"/>
-                                </connections>
-                            </button>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobil Uygulamalar Yarışıyor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1e-4N-gsp">
+                                <rect key="frame" x="210" y="220" width="180" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="g1v-fU-JaB"/>
+                                    <constraint firstAttribute="width" constant="180" id="s4M-oG-aVO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.043137254901960784" green="0.4392156862745098" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Halk oylamasından geçen 10 uygulama juri tarafından değerlendiriliyor. Kazanan uygulamalar büyük ödüllere kavuşuyor." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ry4-iA-1j3">
+                                <rect key="frame" x="16" y="344" width="568" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="09V-aR-34a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="p3Y-Yh-ItG" secondAttribute="bottom" id="2s0-Nf-l4d"/>
-                            <constraint firstAttribute="centerY" secondItem="Rje-x1-2to" secondAttribute="centerY" id="6zQ-0z-8G4"/>
-                            <constraint firstAttribute="trailing" secondItem="Rje-x1-2to" secondAttribute="trailing" id="QiP-Lq-YJD"/>
-                            <constraint firstAttribute="trailing" secondItem="p3Y-Yh-ItG" secondAttribute="trailing" id="m2k-tC-PEK"/>
-                            <constraint firstItem="p3Y-Yh-ItG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="oYO-VY-wBF"/>
-                            <constraint firstItem="p3Y-Yh-ItG" firstAttribute="top" secondItem="Rje-x1-2to" secondAttribute="bottom" constant="8" id="uZV-bH-DlU"/>
-                            <constraint firstAttribute="centerX" secondItem="Rje-x1-2to" secondAttribute="centerX" id="x69-11-eIX"/>
-                            <constraint firstItem="Rje-x1-2to" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="xJv-bW-Y2e"/>
+                            <constraint firstItem="2DL-zP-HEa" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="1dj-vH-cte"/>
+                            <constraint firstItem="KNx-VC-QdR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="1zw-zo-Mlt"/>
+                            <constraint firstAttribute="trailing" secondItem="SJ0-6n-DX3" secondAttribute="trailing" id="68x-oq-qGl"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="SJ0-6n-DX3" secondAttribute="bottom" id="EId-ak-ww5"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="iTk-9F-uhO" secondAttribute="bottom" id="JKg-KA-xEG"/>
+                            <constraint firstItem="H1e-4N-gsp" firstAttribute="top" secondItem="2DL-zP-HEa" secondAttribute="bottom" constant="30" id="KFs-Lp-e32"/>
+                            <constraint firstItem="KNx-VC-QdR" firstAttribute="top" secondItem="ry4-iA-1j3" secondAttribute="bottom" constant="8" id="L2W-Vl-Fa6"/>
+                            <constraint firstAttribute="centerX" secondItem="H1e-4N-gsp" secondAttribute="centerX" id="NTK-QZ-mh6"/>
+                            <constraint firstAttribute="trailing" secondItem="KNx-VC-QdR" secondAttribute="trailing" id="OvI-e8-2rB"/>
+                            <constraint firstItem="SJ0-6n-DX3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="QAN-1V-IGg"/>
+                            <constraint firstItem="iTk-9F-uhO" firstAttribute="top" secondItem="KNx-VC-QdR" secondAttribute="bottom" id="VYR-Fh-Tz1"/>
+                            <constraint firstAttribute="trailing" secondItem="iTk-9F-uhO" secondAttribute="trailing" id="Zd1-Ou-3xD"/>
+                            <constraint firstItem="SJ0-6n-DX3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="fRU-9S-j34"/>
+                            <constraint firstAttribute="trailing" secondItem="ry4-iA-1j3" secondAttribute="trailing" constant="16" id="gGf-In-jER"/>
+                            <constraint firstAttribute="centerX" secondItem="2DL-zP-HEa" secondAttribute="centerX" id="jto-Se-A5F"/>
+                            <constraint firstItem="iTk-9F-uhO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="lh9-3w-jH1"/>
+                            <constraint firstAttribute="centerY" secondItem="H1e-4N-gsp" secondAttribute="centerY" id="suR-Ra-u84"/>
+                            <constraint firstItem="ry4-iA-1j3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="tQZ-jK-G9U"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="6zQ-0z-8G4"/>
+                                <exclude reference="suR-Ra-u84"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="Mqm-c7-WdM"/>
+                    <connections>
+                        <segue destination="Q9O-UD-6xO" kind="show" identifier="DetailPageVC" id="uGF-4y-RfA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1187" y="222"/>
+        </scene>
+        <!--Detail PageVC-->
+        <scene sceneID="zd4-DT-1F4">
+            <objects>
+                <viewController id="Q9O-UD-6xO" customClass="DetailPageVC" customModule="IndircomMobilYarisma" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eGu-Fs-kZQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="d3H-Ru-1zv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zBh-Vr-Cce">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ViQ-rL-ido" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1960" y="222"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EWd-b0-nHQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Y2a-Ma-3pR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CCw-gf-1Uy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="IIh-nh-kmI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u5f-hh-mKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224" y="-471"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_blue.jpg" width="720" height="1280"/>
+        <image name="icon_facebook.png" width="50" height="50"/>
+        <image name="icon_twitter.png" width="50" height="41"/>
+        <image name="indircom_ust_logo.png" width="370" height="370"/>
+    </resources>
 </document>

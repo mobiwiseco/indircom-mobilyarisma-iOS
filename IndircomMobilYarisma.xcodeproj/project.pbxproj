@@ -13,6 +13,21 @@
 		59BDA1B91AB35D2A00DEBCAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA1B81AB35D2A00DEBCAF /* Images.xcassets */; };
 		59BDA1BC1AB35D2A00DEBCAF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA1BA1AB35D2A00DEBCAF /* LaunchScreen.xib */; };
 		59BDA1C81AB35D2A00DEBCAF /* IndircomMobilYarismaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA1C71AB35D2A00DEBCAF /* IndircomMobilYarismaTests.swift */; };
+		59BDA1D51AB7481100DEBCAF /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59BDA1D21AB7481100DEBCAF /* TwitterKit.framework */; };
+		59BDA1D61AB7481100DEBCAF /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA1D31AB7481100DEBCAF /* TwitterKitResources.bundle */; };
+		59BDA1D71AB7481100DEBCAF /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59BDA1D41AB7481100DEBCAF /* Fabric.framework */; };
+		59BDA27E1ABC70AE00DEBCAF /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA27D1ABC70AE00DEBCAF /* SwiftColors.swift */; };
+		59BDA2841ABC71DA00DEBCAF /* icon_facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA2821ABC71DA00DEBCAF /* icon_facebook.png */; };
+		59BDA2851ABC71DA00DEBCAF /* icon_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA2831ABC71DA00DEBCAF /* icon_twitter.png */; };
+		59BDA2871ABC72DA00DEBCAF /* bg_blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA2861ABC72DA00DEBCAF /* bg_blue.jpg */; };
+		59BDA2891ABC75C900DEBCAF /* indircom_ust_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA2881ABC75C900DEBCAF /* indircom_ust_logo.png */; };
+		59BDA28E1ABC820F00DEBCAF /* DetailPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA28D1ABC820F00DEBCAF /* DetailPageVC.swift */; };
+		59BDA2ED1ABCB22400DEBCAF /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 59BDA2E81ABCB21800DEBCAF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		59BDA2F21ABCB43300DEBCAF /* icon_dislike_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA2EE1ABCB43300DEBCAF /* icon_dislike_selected.png */; };
+		59BDA2F31ABCB43300DEBCAF /* icon_dislike_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA2EF1ABCB43300DEBCAF /* icon_dislike_unselected.png */; };
+		59BDA2F41ABCB43300DEBCAF /* icon_like_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA2F01ABCB43300DEBCAF /* icon_like_selected.png */; };
+		59BDA2F51ABCB43300DEBCAF /* icon_like_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA2F11ABCB43300DEBCAF /* icon_like_unselected.png */; };
+		A8FBBEA829A6D1E916C85F9F /* libPods-IndircomMobilYarisma.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0B7CAD66F312EA3474CA11D /* libPods-IndircomMobilYarisma.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,9 +38,45 @@
 			remoteGlobalIDString = 59BDA1AB1AB35D2A00DEBCAF;
 			remoteInfo = IndircomMobilYarisma;
 		};
+		59BDA2E71ABCB21800DEBCAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59BDA2E21ABCB21800DEBCAF /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		59BDA2E91ABCB21800DEBCAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59BDA2E21ABCB21800DEBCAF /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		59BDA2EB1ABCB21D00DEBCAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59BDA2E21ABCB21800DEBCAF /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		59BDA2DF1ABCAA1500DEBCAF /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				59BDA2ED1ABCB22400DEBCAF /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1191D8A8C681A8220437E1BB /* Pods-IndircomMobilYarisma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndircomMobilYarisma.release.xcconfig"; path = "Pods/Target Support Files/Pods-IndircomMobilYarisma/Pods-IndircomMobilYarisma.release.xcconfig"; sourceTree = "<group>"; };
 		59BDA1AC1AB35D2A00DEBCAF /* IndircomMobilYarisma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndircomMobilYarisma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BDA1B01AB35D2A00DEBCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59BDA1B11AB35D2A00DEBCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +87,23 @@
 		59BDA1C11AB35D2A00DEBCAF /* IndircomMobilYarismaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndircomMobilYarismaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BDA1C61AB35D2A00DEBCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59BDA1C71AB35D2A00DEBCAF /* IndircomMobilYarismaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndircomMobilYarismaTests.swift; sourceTree = "<group>"; };
+		59BDA1D11AB36E0300DEBCAF /* Indircom-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Indircom-Bridging-Header.h"; sourceTree = "<group>"; };
+		59BDA1D21AB7481100DEBCAF /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		59BDA1D31AB7481100DEBCAF /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		59BDA1D41AB7481100DEBCAF /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		59BDA27D1ABC70AE00DEBCAF /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
+		59BDA2821ABC71DA00DEBCAF /* icon_facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_facebook.png; sourceTree = "<group>"; };
+		59BDA2831ABC71DA00DEBCAF /* icon_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_twitter.png; sourceTree = "<group>"; };
+		59BDA2861ABC72DA00DEBCAF /* bg_blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_blue.jpg; sourceTree = "<group>"; };
+		59BDA2881ABC75C900DEBCAF /* indircom_ust_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indircom_ust_logo.png; sourceTree = "<group>"; };
+		59BDA28D1ABC820F00DEBCAF /* DetailPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageVC.swift; sourceTree = "<group>"; };
+		59BDA2E21ABCB21800DEBCAF /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		59BDA2EE1ABCB43300DEBCAF /* icon_dislike_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_dislike_selected.png; sourceTree = "<group>"; };
+		59BDA2EF1ABCB43300DEBCAF /* icon_dislike_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_dislike_unselected.png; sourceTree = "<group>"; };
+		59BDA2F01ABCB43300DEBCAF /* icon_like_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_like_selected.png; sourceTree = "<group>"; };
+		59BDA2F11ABCB43300DEBCAF /* icon_like_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_like_unselected.png; sourceTree = "<group>"; };
+		AD3BB8099749D8B75F06EC8D /* Pods-IndircomMobilYarisma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndircomMobilYarisma.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IndircomMobilYarisma/Pods-IndircomMobilYarisma.debug.xcconfig"; sourceTree = "<group>"; };
+		F0B7CAD66F312EA3474CA11D /* libPods-IndircomMobilYarisma.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IndircomMobilYarisma.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +111,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59BDA1D51AB7481100DEBCAF /* TwitterKit.framework in Frameworks */,
+				59BDA1D71AB7481100DEBCAF /* Fabric.framework in Frameworks */,
+				A8FBBEA829A6D1E916C85F9F /* libPods-IndircomMobilYarisma.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +127,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1253AEDC7FF4E54155167E4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59BDA1D21AB7481100DEBCAF /* TwitterKit.framework */,
+				59BDA1D31AB7481100DEBCAF /* TwitterKitResources.bundle */,
+				59BDA1D41AB7481100DEBCAF /* Fabric.framework */,
+				F0B7CAD66F312EA3474CA11D /* libPods-IndircomMobilYarisma.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		59BDA1A31AB35D2A00DEBCAF = {
 			isa = PBXGroup;
 			children = (
+				59BDA2E21ABCB21800DEBCAF /* Alamofire.xcodeproj */,
 				59BDA1AE1AB35D2A00DEBCAF /* IndircomMobilYarisma */,
 				59BDA1C41AB35D2A00DEBCAF /* IndircomMobilYarismaTests */,
 				59BDA1AD1AB35D2A00DEBCAF /* Products */,
+				5ABC904EC3D0B86DD959C990 /* Pods */,
+				1253AEDC7FF4E54155167E4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,10 +164,14 @@
 			children = (
 				59BDA1B11AB35D2A00DEBCAF /* AppDelegate.swift */,
 				59BDA1B31AB35D2A00DEBCAF /* ViewController.swift */,
+				59BDA28D1ABC820F00DEBCAF /* DetailPageVC.swift */,
 				59BDA1B51AB35D2A00DEBCAF /* Main.storyboard */,
 				59BDA1B81AB35D2A00DEBCAF /* Images.xcassets */,
 				59BDA1BA1AB35D2A00DEBCAF /* LaunchScreen.xib */,
+				59BDA27C1ABC6EFC00DEBCAF /* images */,
+				59BDA1D81AB8CAC100DEBCAF /* Libraries */,
 				59BDA1AF1AB35D2A00DEBCAF /* Supporting Files */,
+				59BDA1D11AB36E0300DEBCAF /* Indircom-Bridging-Header.h */,
 			);
 			path = IndircomMobilYarisma;
 			sourceTree = "<group>";
@@ -112,6 +201,47 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		59BDA1D81AB8CAC100DEBCAF /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				59BDA27D1ABC70AE00DEBCAF /* SwiftColors.swift */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		59BDA27C1ABC6EFC00DEBCAF /* images */ = {
+			isa = PBXGroup;
+			children = (
+				59BDA2EE1ABCB43300DEBCAF /* icon_dislike_selected.png */,
+				59BDA2EF1ABCB43300DEBCAF /* icon_dislike_unselected.png */,
+				59BDA2F01ABCB43300DEBCAF /* icon_like_selected.png */,
+				59BDA2F11ABCB43300DEBCAF /* icon_like_unselected.png */,
+				59BDA2881ABC75C900DEBCAF /* indircom_ust_logo.png */,
+				59BDA2861ABC72DA00DEBCAF /* bg_blue.jpg */,
+				59BDA2821ABC71DA00DEBCAF /* icon_facebook.png */,
+				59BDA2831ABC71DA00DEBCAF /* icon_twitter.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		59BDA2E31ABCB21800DEBCAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59BDA2E81ABCB21800DEBCAF /* Alamofire.framework */,
+				59BDA2EA1ABCB21800DEBCAF /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5ABC904EC3D0B86DD959C990 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD3BB8099749D8B75F06EC8D /* Pods-IndircomMobilYarisma.debug.xcconfig */,
+				1191D8A8C681A8220437E1BB /* Pods-IndircomMobilYarisma.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,13 +249,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59BDA1CB1AB35D2A00DEBCAF /* Build configuration list for PBXNativeTarget "IndircomMobilYarisma" */;
 			buildPhases = (
+				D34070C361DC4FED2DF88881 /* Check Pods Manifest.lock */,
 				59BDA1A81AB35D2A00DEBCAF /* Sources */,
 				59BDA1A91AB35D2A00DEBCAF /* Frameworks */,
 				59BDA1AA1AB35D2A00DEBCAF /* Resources */,
+				21DFE65A48EE66F45F43808E /* Copy Pods Resources */,
+				59BDA2DF1ABCAA1500DEBCAF /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				59BDA2EC1ABCB21D00DEBCAF /* PBXTargetDependency */,
 			);
 			name = IndircomMobilYarisma;
 			productName = IndircomMobilYarisma;
@@ -179,6 +313,12 @@
 			mainGroup = 59BDA1A31AB35D2A00DEBCAF;
 			productRefGroup = 59BDA1AD1AB35D2A00DEBCAF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 59BDA2E31ABCB21800DEBCAF /* Products */;
+					ProjectRef = 59BDA2E21ABCB21800DEBCAF /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				59BDA1AB1AB35D2A00DEBCAF /* IndircomMobilYarisma */,
@@ -187,13 +327,39 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		59BDA2E81ABCB21800DEBCAF /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 59BDA2E71ABCB21800DEBCAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		59BDA2EA1ABCB21800DEBCAF /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = 59BDA2E91ABCB21800DEBCAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		59BDA1AA1AB35D2A00DEBCAF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59BDA2891ABC75C900DEBCAF /* indircom_ust_logo.png in Resources */,
+				59BDA2851ABC71DA00DEBCAF /* icon_twitter.png in Resources */,
+				59BDA1D61AB7481100DEBCAF /* TwitterKitResources.bundle in Resources */,
+				59BDA2F51ABCB43300DEBCAF /* icon_like_unselected.png in Resources */,
 				59BDA1B71AB35D2A00DEBCAF /* Main.storyboard in Resources */,
+				59BDA2871ABC72DA00DEBCAF /* bg_blue.jpg in Resources */,
 				59BDA1BC1AB35D2A00DEBCAF /* LaunchScreen.xib in Resources */,
+				59BDA2F41ABCB43300DEBCAF /* icon_like_selected.png in Resources */,
+				59BDA2F31ABCB43300DEBCAF /* icon_dislike_unselected.png in Resources */,
+				59BDA2F21ABCB43300DEBCAF /* icon_dislike_selected.png in Resources */,
+				59BDA2841ABC71DA00DEBCAF /* icon_facebook.png in Resources */,
 				59BDA1B91AB35D2A00DEBCAF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +373,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21DFE65A48EE66F45F43808E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IndircomMobilYarisma/Pods-IndircomMobilYarisma-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D34070C361DC4FED2DF88881 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		59BDA1A81AB35D2A00DEBCAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -214,6 +413,8 @@
 			files = (
 				59BDA1B41AB35D2A00DEBCAF /* ViewController.swift in Sources */,
 				59BDA1B21AB35D2A00DEBCAF /* AppDelegate.swift in Sources */,
+				59BDA28E1ABC820F00DEBCAF /* DetailPageVC.swift in Sources */,
+				59BDA27E1ABC70AE00DEBCAF /* SwiftColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +433,11 @@
 			isa = PBXTargetDependency;
 			target = 59BDA1AB1AB35D2A00DEBCAF /* IndircomMobilYarisma */;
 			targetProxy = 59BDA1C21AB35D2A00DEBCAF /* PBXContainerItemProxy */;
+		};
+		59BDA2EC1ABCB21D00DEBCAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = 59BDA2EB1ABCB21D00DEBCAF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -334,21 +540,37 @@
 		};
 		59BDA1CC1AB35D2A00DEBCAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD3BB8099749D8B75F06EC8D /* Pods-IndircomMobilYarisma.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Swifter-bpkbsjubashirwabfvmfoakjcoyr/Build/Products/Debug-iphoneos",
+					/Users/ahmetkeskin/Desktop,
+				);
 				INFOPLIST_FILE = IndircomMobilYarisma/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IndircomMobilYarisma/Indircom-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		59BDA1CD1AB35D2A00DEBCAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1191D8A8C681A8220437E1BB /* Pods-IndircomMobilYarisma.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Swifter-bpkbsjubashirwabfvmfoakjcoyr/Build/Products/Debug-iphoneos",
+					/Users/ahmetkeskin/Desktop,
+				);
 				INFOPLIST_FILE = IndircomMobilYarisma/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IndircomMobilYarisma/Indircom-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -405,6 +627,7 @@
 				59BDA1CD1AB35D2A00DEBCAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59BDA1CE1AB35D2A00DEBCAF /* Build configuration list for PBXNativeTarget "IndircomMobilYarismaTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +636,7 @@
 				59BDA1D01AB35D2A00DEBCAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
