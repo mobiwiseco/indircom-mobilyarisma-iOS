@@ -280,6 +280,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="khM-Qq-w8f"/>
+                    <connections>
+                        <outlet property="appCategory" destination="Bad-q8-yoW" id="jWw-Wn-Bwv"/>
+                        <outlet property="appLogo" destination="d7w-XT-TRJ" id="lf6-zc-UPf"/>
+                        <outlet property="appName" destination="JWU-2J-ofT" id="Ddz-Rc-Eqf"/>
+                        <outlet property="dislikeButton" destination="Ar9-gq-BOC" id="Gkh-j1-G6g"/>
+                        <outlet property="infoButton" destination="95d-pz-XzY" id="ONW-3E-6N7"/>
+                        <outlet property="likeButton" destination="JGw-Ax-Sp1" id="ZvE-xH-1En"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ViQ-rL-ido" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,13 @@ import UIKit
 
 class DetailPageVC: UIViewController {
 
+    @IBOutlet var appName: UILabel!
+    @IBOutlet var appCategory: UILabel!
+    @IBOutlet var appLogo: UIImageView!
+    @IBOutlet var dislikeButton: UIButton!
+    @IBOutlet var likeButton: UIButton!
+    @IBOutlet var infoButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
