@@ -9,7 +9,6 @@
 import UIKit
 import Fabric
 import TwitterKit
-import SwifteriOS
 
 
 @UIApplicationMain
