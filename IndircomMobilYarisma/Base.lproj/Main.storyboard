@@ -182,8 +182,8 @@
                                     <constraint firstAttribute="height" constant="200" id="e9v-7P-x3t"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bad-q8-yoW">
-                                <rect key="frame" x="274" y="333" width="52" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bad-q8-yoW">
+                                <rect key="frame" x="267" y="333" width="66" height="16"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -281,7 +281,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="khM-Qq-w8f"/>
                     <connections>
-                        <outlet property="appCategory" destination="Bad-q8-yoW" id="jWw-Wn-Bwv"/>
+                        <outlet property="appDescription" destination="Bad-q8-yoW" id="z8O-I9-JB6"/>
                         <outlet property="appLogo" destination="d7w-XT-TRJ" id="lf6-zc-UPf"/>
                         <outlet property="appName" destination="JWU-2J-ofT" id="Ddz-Rc-Eqf"/>
                         <outlet property="dislikeButton" destination="Ar9-gq-BOC" id="Gkh-j1-G6g"/>

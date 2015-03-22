@@ -11,7 +11,7 @@ import UIKit
 class DetailPageVC: UIViewController {
 
     @IBOutlet var appName: UILabel!
-    @IBOutlet var appCategory: UILabel!
+    @IBOutlet var appDescription: UILabel!
     @IBOutlet var appLogo: UIImageView!
     @IBOutlet var dislikeButton: UIButton!
     @IBOutlet var likeButton: UIButton!
