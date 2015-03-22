@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183358F51ABF3D2800BE5C12 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183358F41ABF3D2800BE5C12 /* App.swift */; };
 		59BDA1B21AB35D2A00DEBCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA1B11AB35D2A00DEBCAF /* AppDelegate.swift */; };
 		59BDA1B41AB35D2A00DEBCAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA1B31AB35D2A00DEBCAF /* ViewController.swift */; };
 		59BDA1B71AB35D2A00DEBCAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA1B51AB35D2A00DEBCAF /* Main.storyboard */; };
@@ -88,6 +89,8 @@
 
 /* Begin PBXFileReference section */
 		1191D8A8C681A8220437E1BB /* Pods-IndircomMobilYarisma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndircomMobilYarisma.release.xcconfig"; path = "Pods/Target Support Files/Pods-IndircomMobilYarisma/Pods-IndircomMobilYarisma.release.xcconfig"; sourceTree = "<group>"; };
+		183358F41ABF3D2800BE5C12 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		18644F1C1ABE29E800D6C386 /* roboto-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "roboto-medium.ttf"; sourceTree = "<group>"; };
 		59BDA1AC1AB35D2A00DEBCAF /* IndircomMobilYarisma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndircomMobilYarisma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BDA1B01AB35D2A00DEBCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59BDA1B11AB35D2A00DEBCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +164,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		183358F21ABF3CDE00BE5C12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				183358F41ABF3D2800BE5C12 /* App.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		18644F1B1ABE296800D6C386 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				18644F1C1ABE29E800D6C386 /* roboto-medium.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		59BDA1A31AB35D2A00DEBCAF = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +211,8 @@
 				59BDA1B81AB35D2A00DEBCAF /* Images.xcassets */,
 				59BDA1BA1AB35D2A00DEBCAF /* LaunchScreen.xib */,
 				59BDA27C1ABC6EFC00DEBCAF /* images */,
+				183358F21ABF3CDE00BE5C12 /* Model */,
+				18644F1B1ABE296800D6C386 /* Fonts */,
 				59BDA1D81AB8CAC100DEBCAF /* Libraries */,
 				59BDA2F91ABCC08000DEBCAF /* Modals */,
 				59BDA1AF1AB35D2A00DEBCAF /* Supporting Files */,
@@ -239,10 +260,6 @@
 		59BDA27C1ABC6EFC00DEBCAF /* images */ = {
 			isa = PBXGroup;
 			children = (
-				59BDA2EE1ABCB43300DEBCAF /* icon_dislike_selected.png */,
-				59BDA2EF1ABCB43300DEBCAF /* icon_dislike_unselected.png */,
-				59BDA2F01ABCB43300DEBCAF /* icon_like_selected.png */,
-				59BDA2F11ABCB43300DEBCAF /* icon_like_unselected.png */,
 				59BDA2881ABC75C900DEBCAF /* indircom_ust_logo.png */,
 				59BDA2861ABC72DA00DEBCAF /* bg_blue.jpg */,
 				59BDA2821ABC71DA00DEBCAF /* icon_facebook.png */,
@@ -409,9 +426,6 @@
 				59D979FD1ABEF287004A3034 /* Info.plist in Resources */,
 				59BDA2871ABC72DA00DEBCAF /* bg_blue.jpg in Resources */,
 				59BDA1BC1AB35D2A00DEBCAF /* LaunchScreen.xib in Resources */,
-				59BDA2F41ABCB43300DEBCAF /* icon_like_selected.png in Resources */,
-				59BDA2F31ABCB43300DEBCAF /* icon_dislike_unselected.png in Resources */,
-				59BDA2F21ABCB43300DEBCAF /* icon_dislike_selected.png in Resources */,
 				59BDA2841ABC71DA00DEBCAF /* icon_facebook.png in Resources */,
 				59BDA1B91AB35D2A00DEBCAF /* Images.xcassets in Resources */,
 			);
