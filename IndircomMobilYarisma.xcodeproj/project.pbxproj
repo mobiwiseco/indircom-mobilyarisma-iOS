@@ -27,7 +27,18 @@
 		59BDA2F31ABCB43300DEBCAF /* icon_dislike_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA2EF1ABCB43300DEBCAF /* icon_dislike_unselected.png */; };
 		59BDA2F41ABCB43300DEBCAF /* icon_like_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA2F01ABCB43300DEBCAF /* icon_like_selected.png */; };
 		59BDA2F51ABCB43300DEBCAF /* icon_like_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA2F11ABCB43300DEBCAF /* icon_like_unselected.png */; };
-		A8FBBEA829A6D1E916C85F9F /* libPods-IndircomMobilYarisma.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0B7CAD66F312EA3474CA11D /* libPods-IndircomMobilYarisma.a */; };
+		59BDA2FB1ABCC09100DEBCAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA2FA1ABCC09100DEBCAF /* User.swift */; };
+		59D979EC1ABE1C21004A3034 /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D979EB1ABE1C21004A3034 /* SwiftyUserDefaults.swift */; };
+		59D979F81ABEF287004A3034 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D979EF1ABEF286004A3034 /* FrameView.swift */; };
+		59D979F91ABEF287004A3034 /* HUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D979F01ABEF286004A3034 /* HUDAssets.swift */; };
+		59D979FA1ABEF287004A3034 /* HUDContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D979F11ABEF286004A3034 /* HUDContentView.swift */; };
+		59D979FB1ABEF287004A3034 /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D979F21ABEF286004A3034 /* HUDController.swift */; };
+		59D979FC1ABEF287004A3034 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59D979F31ABEF286004A3034 /* Images.xcassets */; };
+		59D979FD1ABEF287004A3034 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59D979F41ABEF286004A3034 /* Info.plist */; };
+		59D979FE1ABEF287004A3034 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D979F61ABEF287004A3034 /* Window.swift */; };
+		59D979FF1ABEF287004A3034 /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D979F71ABEF287004A3034 /* WindowRootViewController.swift */; };
+		59D97A011ABF109D004A3034 /* IJReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D97A001ABF109D004A3034 /* IJReachability.swift */; };
+		D59DFC3873293A9035B9C301 /* libPods-IndircomMobilYarisma.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2EC5D6C7736E3D795ADD93 /* libPods-IndircomMobilYarisma.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,8 +113,20 @@
 		59BDA2EF1ABCB43300DEBCAF /* icon_dislike_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_dislike_unselected.png; sourceTree = "<group>"; };
 		59BDA2F01ABCB43300DEBCAF /* icon_like_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_like_selected.png; sourceTree = "<group>"; };
 		59BDA2F11ABCB43300DEBCAF /* icon_like_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_like_unselected.png; sourceTree = "<group>"; };
+		59BDA2FA1ABCC09100DEBCAF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		59D979EB1ABE1C21004A3034 /* SwiftyUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaults.swift; sourceTree = "<group>"; };
+		59D979EF1ABEF286004A3034 /* FrameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
+		59D979F01ABEF286004A3034 /* HUDAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDAssets.swift; sourceTree = "<group>"; };
+		59D979F11ABEF286004A3034 /* HUDContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDContentView.swift; sourceTree = "<group>"; };
+		59D979F21ABEF286004A3034 /* HUDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
+		59D979F31ABEF286004A3034 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		59D979F41ABEF286004A3034 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59D979F51ABEF286004A3034 /* PKHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKHUD.h; sourceTree = "<group>"; };
+		59D979F61ABEF287004A3034 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		59D979F71ABEF287004A3034 /* WindowRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowRootViewController.swift; sourceTree = "<group>"; };
+		59D97A001ABF109D004A3034 /* IJReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJReachability.swift; sourceTree = "<group>"; };
 		AD3BB8099749D8B75F06EC8D /* Pods-IndircomMobilYarisma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndircomMobilYarisma.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IndircomMobilYarisma/Pods-IndircomMobilYarisma.debug.xcconfig"; sourceTree = "<group>"; };
-		F0B7CAD66F312EA3474CA11D /* libPods-IndircomMobilYarisma.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IndircomMobilYarisma.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE2EC5D6C7736E3D795ADD93 /* libPods-IndircomMobilYarisma.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IndircomMobilYarisma.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +136,7 @@
 			files = (
 				59BDA1D51AB7481100DEBCAF /* TwitterKit.framework in Frameworks */,
 				59BDA1D71AB7481100DEBCAF /* Fabric.framework in Frameworks */,
-				A8FBBEA829A6D1E916C85F9F /* libPods-IndircomMobilYarisma.a in Frameworks */,
+				D59DFC3873293A9035B9C301 /* libPods-IndircomMobilYarisma.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +156,7 @@
 				59BDA1D21AB7481100DEBCAF /* TwitterKit.framework */,
 				59BDA1D31AB7481100DEBCAF /* TwitterKitResources.bundle */,
 				59BDA1D41AB7481100DEBCAF /* Fabric.framework */,
-				F0B7CAD66F312EA3474CA11D /* libPods-IndircomMobilYarisma.a */,
+				FE2EC5D6C7736E3D795ADD93 /* libPods-IndircomMobilYarisma.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,6 +193,7 @@
 				59BDA1BA1AB35D2A00DEBCAF /* LaunchScreen.xib */,
 				59BDA27C1ABC6EFC00DEBCAF /* images */,
 				59BDA1D81AB8CAC100DEBCAF /* Libraries */,
+				59BDA2F91ABCC08000DEBCAF /* Modals */,
 				59BDA1AF1AB35D2A00DEBCAF /* Supporting Files */,
 				59BDA1D11AB36E0300DEBCAF /* Indircom-Bridging-Header.h */,
 			);
@@ -204,7 +228,10 @@
 		59BDA1D81AB8CAC100DEBCAF /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				59D979EE1ABEF286004A3034 /* PKHUD */,
+				59D979EB1ABE1C21004A3034 /* SwiftyUserDefaults.swift */,
 				59BDA27D1ABC70AE00DEBCAF /* SwiftColors.swift */,
+				59D97A001ABF109D004A3034 /* IJReachability.swift */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -231,6 +258,30 @@
 				59BDA2EA1ABCB21800DEBCAF /* AlamofireTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		59BDA2F91ABCC08000DEBCAF /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				59BDA2FA1ABCC09100DEBCAF /* User.swift */,
+			);
+			name = Modals;
+			sourceTree = "<group>";
+		};
+		59D979EE1ABEF286004A3034 /* PKHUD */ = {
+			isa = PBXGroup;
+			children = (
+				59D979EF1ABEF286004A3034 /* FrameView.swift */,
+				59D979F01ABEF286004A3034 /* HUDAssets.swift */,
+				59D979F11ABEF286004A3034 /* HUDContentView.swift */,
+				59D979F21ABEF286004A3034 /* HUDController.swift */,
+				59D979F31ABEF286004A3034 /* Images.xcassets */,
+				59D979F41ABEF286004A3034 /* Info.plist */,
+				59D979F51ABEF286004A3034 /* PKHUD.h */,
+				59D979F61ABEF287004A3034 /* Window.swift */,
+				59D979F71ABEF287004A3034 /* WindowRootViewController.swift */,
+			);
+			path = PKHUD;
 			sourceTree = "<group>";
 		};
 		5ABC904EC3D0B86DD959C990 /* Pods */ = {
@@ -352,8 +403,10 @@
 				59BDA2891ABC75C900DEBCAF /* indircom_ust_logo.png in Resources */,
 				59BDA2851ABC71DA00DEBCAF /* icon_twitter.png in Resources */,
 				59BDA1D61AB7481100DEBCAF /* TwitterKitResources.bundle in Resources */,
+				59D979FC1ABEF287004A3034 /* Images.xcassets in Resources */,
 				59BDA2F51ABCB43300DEBCAF /* icon_like_unselected.png in Resources */,
 				59BDA1B71AB35D2A00DEBCAF /* Main.storyboard in Resources */,
+				59D979FD1ABEF287004A3034 /* Info.plist in Resources */,
 				59BDA2871ABC72DA00DEBCAF /* bg_blue.jpg in Resources */,
 				59BDA1BC1AB35D2A00DEBCAF /* LaunchScreen.xib in Resources */,
 				59BDA2F41ABCB43300DEBCAF /* icon_like_selected.png in Resources */,
@@ -412,9 +465,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				59BDA1B41AB35D2A00DEBCAF /* ViewController.swift in Sources */,
+				59D979FB1ABEF287004A3034 /* HUDController.swift in Sources */,
 				59BDA1B21AB35D2A00DEBCAF /* AppDelegate.swift in Sources */,
+				59D979EC1ABE1C21004A3034 /* SwiftyUserDefaults.swift in Sources */,
+				59D979FA1ABEF287004A3034 /* HUDContentView.swift in Sources */,
 				59BDA28E1ABC820F00DEBCAF /* DetailPageVC.swift in Sources */,
+				59BDA2FB1ABCC09100DEBCAF /* User.swift in Sources */,
+				59D979F81ABEF287004A3034 /* FrameView.swift in Sources */,
+				59D979FF1ABEF287004A3034 /* WindowRootViewController.swift in Sources */,
+				59D979F91ABEF287004A3034 /* HUDAssets.swift in Sources */,
+				59D97A011ABF109D004A3034 /* IJReachability.swift in Sources */,
 				59BDA27E1ABC70AE00DEBCAF /* SwiftColors.swift in Sources */,
+				59D979FE1ABEF287004A3034 /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

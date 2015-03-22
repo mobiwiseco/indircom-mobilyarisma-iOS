@@ -9,9 +9,13 @@
 import UIKit
 
 class DetailPageVC: UIViewController {
+    
+    var userToken : String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        println("Tamam token geldi : \(userToken) ")
 
         // Do any additional setup after loading the view.
     }

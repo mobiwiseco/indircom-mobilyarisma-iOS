@@ -9,7 +9,7 @@
 import UIKit
 import Fabric
 import TwitterKit
-import SwifteriOS
+
 
 
 @UIApplicationMain
@@ -26,16 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Fabric.with([Twitter()])
         
+        self.CheckIfLoggedIn()
         
         // Whenever a person opens app, check for a cached session
-        if (FBSession.activeSession().state == FBSessionState.OpenTokenExtended) {
+        if (FBSession.activeSession().state == FBSessionState.Open || FBSession.activeSession().state == FBSessionState.OpenTokenExtended) {
             
             // If there's one, just open the session silently, without showing the user the login UI
             FBSession.openActiveSessionWithReadPermissions(["public_profile","email"] , allowLoginUI: true, completionHandler: { (session : FBSession!, state : FBSessionState!, error : NSError!) -> Void in
                 
                 self.sessionStateChanged(session, state: state, error: error)
                 
-                //[appDelegate sessionStateChanged:session state:state error:error];
                 
             })
         }
@@ -96,6 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else{
             if (state == FBSessionState.Open){
                 //I would like to get the user token or FBGraphUser here but i don't know how
+                NSLog("Session opened")
             }
             
         }
@@ -113,6 +114,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSLog("Current session is no valid")
             }
         }
+    }
+    
+    func CheckIfLoggedIn()
+    {
+        if Defaults.hasKey("token")
+        {
+            let token = Defaults["token"].string
+            println("there is token \(token!)")
+            goDetailPage()
+        }
+        
+    }
+    
+    func goDetailPage()
+    {
+        let navCon = self.window?.rootViewController as UINavigationController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let votePage = storyboard.instantiateViewControllerWithIdentifier("DetailPageVC") as DetailPageVC
+        votePage.userToken = Defaults["token"].string!
+        self.window?.rootViewController = votePage
+//        navCon.pushViewController(votePage, animated: true)
+        
     }
 }
 

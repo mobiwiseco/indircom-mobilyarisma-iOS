@@ -10,20 +10,26 @@ import UIKit
 import TwitterKit
 import Alamofire
 
-
-
-
 class ViewController: UIViewController {
+    
+    var login_base_url : String = "http://www.akilliyazilim.org/indircom/indir.com/public"
+    var user : User = User()
+    
+    
+    @IBOutlet var facebookLabel: UILabel!
+    @IBOutlet var twitterLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        var contentView = HUDContentView.TextView(text: "Giriş Yapılıyor")
+        HUDController.sharedController.contentView = contentView
         
     
     }
     
-        override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -32,44 +38,106 @@ class ViewController: UIViewController {
     @IBAction func twitterLogInTapped(sender: AnyObject)
     {
         
-        Twitter.sharedInstance().logInWithCompletion {
-            (session, error) -> Void in
-            if (session != nil) {
-                println("signed in as \(session.userName)");
-                println("user ID :  \(session.userID)");
-                
-               // self.alertWithTitle("Twitter", message: "You are logged in")
-                
-                self.goDetailPage()
-                
-            } else {
-                println("error: \(error.localizedDescription)");
+        if IJReachability.isConnectedToNetwork(){
+            Twitter.sharedInstance().logInWithCompletion {
+                (session, error) -> Void in
+                if (session != nil) {
+                    println("signed in as \(session.userName)");
+                    println("user ID :  \(session.userID)");
+                    println("Session : \(session)")
+                    
+                    
+                    HUDController.sharedController.show()
+                    
+                    Twitter.sharedInstance().APIClient.loadUserWithID(session.userID, completion: { (user : TWTRUser!, error :NSError!) -> Void in
+                        
+                        println("USER info TWITTER : \(user.profileImageLargeURL)")
+                        
+                        
+                        var fullNameArr = split(user.name) {$0 == " "}
+                        var firstName: String = fullNameArr[0]
+                        var lastName: String? = fullNameArr.count > 1 ? fullNameArr[1] : nil
+                        
+                        self.user.name = firstName
+                        self.user.surname = lastName!
+                        self.user.id = session.userID
+                        self.user.image = user.profileImageLargeURL
+                        
+                        self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, code: self.user.code)
+                        
+                    })
+                    
+                } else {
+                    println("error: \(error.localizedDescription)");
+                }
             }
+
+        }
+        else{
+            self.alertWithTitle("Bağlantı Hatası", message: "Lütfen internet bağlantınızı kontrol ediniz")
         }
         
     }
-
-    // Facebook Delegate Methods
     
-//    func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
-//        println("User Logged In")
-//    }
-//    
-//    func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
-//        println("User: \(user)")
-//        println("User ID: \(user.objectID)")
-//        println("User Name: \(user.name)")
-//        
-//    }
-//    
-//    func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
-//         println("User Logged Out")
-//    }
-//    
-//    func loginView(loginView : FBLoginView!, handleError:NSError) {
-//        println("Error: \(handleError.localizedDescription)")
-//    }
-
+    @IBAction func loginWithFacebook(sender: AnyObject)
+    {
+      if IJReachability.isConnectedToNetwork()
+        {
+            if (FBSession.activeSession().state == FBSessionState.Open || FBSession.activeSession().state == FBSessionState.OpenTokenExtended)
+            {
+                // Close the session and remove the access token from the cache
+                // The session state handler (in the app delegate) will be called automatically
+                FBSession.activeSession().closeAndClearTokenInformation()
+                facebookLabel.text! = "Facebook ile giriş"
+                
+                
+            }
+            else
+            {
+                // Open a session showing the user the login UI
+                // You must ALWAYS ask for public_profile permissions when opening a session
+                FBSession.openActiveSessionWithReadPermissions(["public_profile"], allowLoginUI: true, completionHandler: {
+                    (session:FBSession!, state:FBSessionState, error:NSError!) in
+                    
+                    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                    // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
+                    appDelegate.sessionStateChanged(session, state: state, error: error)
+                    
+                    if(FBSession.activeSession().state == FBSessionState.Open){
+                        
+                        HUDController.sharedController.show()
+                        
+                        /* Session açıldıktan sonra */
+                        let request = FBRequest(session: FBSession.activeSession(), graphPath: "/me")
+                        request.startWithCompletionHandler({ (connection, result, error) -> Void in
+                            
+                            self.user.name = result["first_name"] as String
+                            self.user.surname = result["last_name"] as String
+                            self.user.id = result["id"] as String
+                            
+                            
+                            //Facebook ile giriş yaptıktan sonra servise post edip kaydı gerçekleştiriyorz
+                            self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, code: self.user.code)
+                            
+                            
+                        })
+                    }
+                    
+                })
+            }
+        }
+        else
+        {
+            self.alertWithTitle("Bağlantı Hatası", message: "Lütfen internet bağlantınızı kontrol ediniz")
+        }
+        
+        
+    }
+    
+    func goDetailPage()
+    {
+        self.performSegueWithIdentifier("DetailPageVC", sender: self)
+    }
     
     func alertWithTitle(title: String, message: String) {
         var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -77,69 +145,62 @@ class ViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    @IBAction func loginWithFacebook(sender: AnyObject)
+    /* Request atılıp veri alındıktan sonra user objemize kayıt edip onu da userdefault'a kaydediyoruz*/
+    func saveDefaults(userObj : User)
     {
-     
-        if (FBSession.activeSession().state == FBSessionState.Open || FBSession.activeSession().state == FBSessionState.OpenTokenExtended)
-        {
-            // Close the session and remove the access token from the cache
-            // The session state handler (in the app delegate) will be called automatically
-            FBSession.activeSession().closeAndClearTokenInformation()
-        }
-        else
-        {
-            // Open a session showing the user the login UI
-            // You must ALWAYS ask for public_profile permissions when opening a session
-            FBSession.openActiveSessionWithReadPermissions(["public_profile"], allowLoginUI: true, completionHandler: {
-                (session:FBSession!, state:FBSessionState, error:NSError!) in
-                
-                let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-                // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
-                appDelegate.sessionStateChanged(session, state: state, error: error)
-                
-                
-                let request = FBRequest(session: FBSession.activeSession(), graphPath: "/me")
-                request.startWithCompletionHandler({ (connection, result, error) -> Void in
-                    
-                    println(result)
-                   
-                })
-                
-            })
-        }
+        Defaults["name"] = userObj.name
+        Defaults["surname"] = userObj.surname
+        Defaults["id"] = userObj.id
+        Defaults["token"] = userObj.token
     }
     
-//    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-//        
-//        if segue.identifier == "DetailPageVC"
-//        {
-//            let vc = segue.destinationViewController as DetailPageVC
-//            
-//        }
-//    
-//    }
-    
-    
-    func goDetailPage()
+    /* Servis methodları */
+    /* ###################################################### */
+    func registerUser(name : String , surname : String , id : String , code : String)
     {
-        self.performSegueWithIdentifier("DetailPageVC", sender: self)
-    }
-    
-    
-    func registerUser()
-    {
-        Alamofire.request(.POST, "rezervasyon?key=f9a3226fc9fbd886c59a707ed7bd16ed", parameters: nil
+        let parameters = [
+            "name": name,
+            "surname": surname,
+            "user_auth_id": id,
+            "api_key" : code
+        ]
+        
+        print("Parameters : \(parameters)")
+        
+        Alamofire.request(.POST, login_base_url+"/api/v1/register", parameters: parameters, encoding: .JSON
             )
-            .response {(request, response, _, error) in
+            .responseJSON {(request, response, data, error) in
                 if error == nil{
-                   
-                } else {
                     
+                    print(" \nError : \(error) \n")
+                    
+                    if let json = data as? NSDictionary {
+                        if let info = json["user"] as? NSArray
+                        {
+                            let dic : NSDictionary = info[0] as NSDictionary
+                            self.user.token = dic["token"] as String
+                            
+                            println("info : \(info)")
+                        }
+                        
+                        var message = json["message"]? as String
+                        println("message : \(message)")
+                    }
+                    
+                    println("TOKEN : \(self.user.token) \n")
+                    
+                    self.saveDefaults(self.user)
+                    
+                    HUDController.sharedController.hide(animated: true)
+                    self.goDetailPage()
+                    
+                } else {
+                    self.alertWithTitle("Hata", message: "Giriş yapılırken bir hata ile karşılaşıldı !")
                 }
         }
+        
     }
- 
     
+    /* ###################################################### */
 }
 

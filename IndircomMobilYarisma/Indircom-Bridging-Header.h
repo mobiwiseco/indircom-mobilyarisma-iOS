@@ -8,6 +8,7 @@
 
 #ifndef IndircomMobilYarisma_Indircom_Bridging_Header_h
 
+#import <Foundation/Foundation.h>
 #import <FacebookSDK.h>
 
 #define IndircomMobilYarisma_Indircom_Bridging_Header_h

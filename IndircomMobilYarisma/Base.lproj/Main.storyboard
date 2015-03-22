@@ -146,6 +146,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Mqm-c7-WdM"/>
                     <connections>
+                        <outlet property="facebookLabel" destination="hIP-lw-s30" id="2z2-8n-IEh"/>
+                        <outlet property="twitterLabel" destination="CWJ-Uq-DVP" id="8JV-rj-INj"/>
                         <segue destination="Q9O-UD-6xO" kind="show" identifier="DetailPageVC" id="uGF-4y-RfA"/>
                     </connections>
                 </viewController>
@@ -156,7 +158,7 @@
         <!--Detail PageVC-->
         <scene sceneID="zd4-DT-1F4">
             <objects>
-                <viewController id="Q9O-UD-6xO" customClass="DetailPageVC" customModule="IndircomMobilYarisma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailPageVC" id="Q9O-UD-6xO" customClass="DetailPageVC" customModule="IndircomMobilYarisma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eGu-Fs-kZQ"/>
                         <viewControllerLayoutGuide type="bottom" id="d3H-Ru-1zv"/>
