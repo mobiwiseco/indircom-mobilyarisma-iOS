@@ -7,7 +7,6 @@
     <customFonts key="customFonts">
         <mutableArray key="roboto-medium.ttf">
             <string>Roboto-Medium</string>
-            <string>Roboto-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -182,12 +181,6 @@
                                     <constraint firstAttribute="height" constant="200" id="e9v-7P-x3t"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bad-q8-yoW">
-                                <rect key="frame" x="267" y="333" width="66" height="16"/>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWU-2J-ofT">
                                 <rect key="frame" x="274" y="93" width="53" height="24"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
@@ -203,6 +196,9 @@
                                 <state key="normal" image="icon_like_unselected">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onLikeButtonClick:" destination="Q9O-UD-6xO" eventType="touchUpInside" id="yCw-RJ-y3J"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ar9-gq-BOC">
                                 <rect key="frame" x="185" y="375" width="90" height="90"/>
@@ -215,6 +211,9 @@
                                 <state key="normal" image="icon_dislike_unselected">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onDislikeButtonClick:" destination="Q9O-UD-6xO" eventType="touchUpInside" id="goq-Ig-VXp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95d-pz-XzY">
                                 <rect key="frame" x="273" y="473" width="55" height="55"/>
@@ -233,6 +232,9 @@
                                         <exclude reference="n9e-NP-vDk"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="onInfoButtonClick:" destination="Q9O-UD-6xO" eventType="touchUpInside" id="Lu7-X7-kGd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhb-WM-j51">
                                 <rect key="frame" x="569" y="212" width="15" height="25"/>
@@ -243,6 +245,9 @@
                                 <state key="normal" image="icon_next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onNextButtonClick:" destination="Q9O-UD-6xO" eventType="touchUpInside" id="FG1-nm-heo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMa-6z-5k5">
                                 <rect key="frame" x="16" y="212" width="15" height="25"/>
@@ -253,20 +258,21 @@
                                 <state key="normal" image="icon_previous">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onPreviousButtonClick:" destination="Q9O-UD-6xO" eventType="touchUpInside" id="IVj-92-WTh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="95d-pz-XzY" firstAttribute="top" secondItem="d7w-XT-TRJ" secondAttribute="bottom" constant="148" id="0EI-bc-4xI"/>
                             <constraint firstItem="pTU-MI-1tf" firstAttribute="top" secondItem="zBh-Vr-Cce" secondAttribute="topMargin" id="5di-b7-azD"/>
                             <constraint firstItem="d7w-XT-TRJ" firstAttribute="centerY" secondItem="fMa-6z-5k5" secondAttribute="centerY" id="6ta-DS-Ff6"/>
                             <constraint firstAttribute="centerY" secondItem="d7w-XT-TRJ" secondAttribute="centerY" constant="75" id="9kq-CS-MtF"/>
                             <constraint firstItem="Ar9-gq-BOC" firstAttribute="top" secondItem="d7w-XT-TRJ" secondAttribute="bottom" constant="50" id="BLh-Dc-ZCd"/>
-                            <constraint firstItem="95d-pz-XzY" firstAttribute="top" secondItem="Bad-q8-yoW" secondAttribute="bottom" constant="124" id="DGf-Rd-Y1E"/>
                             <constraint firstAttribute="centerX" secondItem="d7w-XT-TRJ" secondAttribute="centerX" id="DUE-kL-9Ba"/>
-                            <constraint firstItem="Bad-q8-yoW" firstAttribute="top" secondItem="d7w-XT-TRJ" secondAttribute="bottom" constant="8" id="Ecc-HB-FzT"/>
                             <constraint firstItem="JGw-Ax-Sp1" firstAttribute="top" secondItem="d7w-XT-TRJ" secondAttribute="bottom" constant="50" id="GlH-X5-8e0"/>
                             <constraint firstAttribute="centerX" secondItem="95d-pz-XzY" secondAttribute="centerX" id="KSF-mK-2dM"/>
-                            <constraint firstAttribute="centerX" secondItem="Bad-q8-yoW" secondAttribute="centerX" id="LUg-RX-rrB"/>
                             <constraint firstItem="xhb-WM-j51" firstAttribute="trailing" secondItem="zBh-Vr-Cce" secondAttribute="trailingMargin" id="QDP-YY-Cd6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pTU-MI-1tf" secondAttribute="trailing" constant="-16" id="RDR-7H-QJQ"/>
                             <constraint firstItem="fMa-6z-5k5" firstAttribute="leading" secondItem="zBh-Vr-Cce" secondAttribute="leadingMargin" id="bO4-eu-A4n"/>
@@ -281,12 +287,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="khM-Qq-w8f"/>
                     <connections>
-                        <outlet property="appDescription" destination="Bad-q8-yoW" id="z8O-I9-JB6"/>
                         <outlet property="appLogo" destination="d7w-XT-TRJ" id="lf6-zc-UPf"/>
                         <outlet property="appName" destination="JWU-2J-ofT" id="Ddz-Rc-Eqf"/>
-                        <outlet property="dislikeButton" destination="Ar9-gq-BOC" id="Gkh-j1-G6g"/>
-                        <outlet property="infoButton" destination="95d-pz-XzY" id="ONW-3E-6N7"/>
-                        <outlet property="likeButton" destination="JGw-Ax-Sp1" id="ZvE-xH-1En"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ViQ-rL-ido" userLabel="First Responder" sceneMemberID="firstResponder"/>
