@@ -489,6 +489,7 @@
 				59D979FF1ABEF287004A3034 /* WindowRootViewController.swift in Sources */,
 				59D979F91ABEF287004A3034 /* HUDAssets.swift in Sources */,
 				59D97A011ABF109D004A3034 /* IJReachability.swift in Sources */,
+				183358F51ABF3D2800BE5C12 /* App.swift in Sources */,
 				59BDA27E1ABC70AE00DEBCAF /* SwiftColors.swift in Sources */,
 				59D979FE1ABEF287004A3034 /* Window.swift in Sources */,
 			);

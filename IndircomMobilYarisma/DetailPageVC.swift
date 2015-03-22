@@ -12,6 +12,10 @@ import Alamofire
 class DetailPageVC: UIViewController {
     
     var userToken : String = ""
+    @IBOutlet var appName: UILabel!
+    @IBOutlet var appLogo: UIImageView!
+    var appList = [App]()
+    var currentPosition = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()

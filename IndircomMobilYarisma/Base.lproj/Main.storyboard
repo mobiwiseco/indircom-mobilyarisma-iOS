@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blue.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SJ0-6n-DX3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blue.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SJ0-6n-DX3">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNx-VC-QdR">
@@ -308,7 +308,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Q9O-UD-6xO" kind="relationship" relationship="rootViewController" id="uQG-qP-CTO"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="SeO-Mn-aEK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5f-hh-mKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -328,7 +328,4 @@
         <image name="icon_twitter.png" width="50" height="41"/>
         <image name="indircom_ust_logo.png" width="370" height="370"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="uQG-qP-CTO"/>
-    </inferredMetricsTieBreakers>
 </document>
