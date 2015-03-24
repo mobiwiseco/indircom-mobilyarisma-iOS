@@ -12,7 +12,6 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    var login_base_url : String = "http://www.akilliyazilim.org/indircom/indir.com/public"
     var user : User = User()
     
     
@@ -23,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var contentView = HUDContentView.TextView(text: "Giriş Yapılıyor")
+        var contentView = HUDContentView.ProgressView()
         HUDController.sharedController.contentView = contentView
         
     
@@ -37,7 +36,8 @@ class ViewController: UIViewController {
     
     @IBAction func twitterLogInTapped(sender: AnyObject)
     {
-        
+        HUDController.sharedController.show()
+
         if IJReachability.isConnectedToNetwork(){
             Twitter.sharedInstance().logInWithCompletion {
                 (session, error) -> Void in
@@ -47,7 +47,6 @@ class ViewController: UIViewController {
                     println("Session : \(session)")
                     
                     
-                    HUDController.sharedController.show()
                     
                     Twitter.sharedInstance().APIClient.loadUserWithID(session.userID, completion: { (user : TWTRUser!, error :NSError!) -> Void in
                         
@@ -94,6 +93,9 @@ class ViewController: UIViewController {
             }
             else
             {
+                
+                HUDController.sharedController.show()
+
                 // Open a session showing the user the login UI
                 // You must ALWAYS ask for public_profile permissions when opening a session
                 FBSession.openActiveSessionWithReadPermissions(["public_profile"], allowLoginUI: true, completionHandler: {
@@ -105,7 +107,6 @@ class ViewController: UIViewController {
                     
                     if(FBSession.activeSession().state == FBSessionState.Open){
                         
-                        HUDController.sharedController.show()
                         
                         /* Session açıldıktan sonra */
                         let request = FBRequest(session: FBSession.activeSession(), graphPath: "/me")
@@ -117,8 +118,9 @@ class ViewController: UIViewController {
                             
                             
                             //Facebook ile giriş yaptıktan sonra servise post edip kaydı gerçekleştiriyorz
-                            self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, code: self.user.code)
+//                            self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, code: self.user.code)
                             
+                            self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, code: self.user.code)
                             
                         })
                     }
@@ -139,11 +141,7 @@ class ViewController: UIViewController {
         self.performSegueWithIdentifier("DetailPageVC", sender: self)
     }
     
-    func alertWithTitle(title: String, message: String) {
-        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
+   
     
     /* Request atılıp veri alındıktan sonra user objemize kayıt edip onu da userdefault'a kaydediyoruz*/
     func saveDefaults(userObj : User)
@@ -156,51 +154,49 @@ class ViewController: UIViewController {
     
     /* Servis methodları */
     /* ###################################################### */
+    
     func registerUser(name : String , surname : String , id : String , code : String)
     {
-        let parameters = [
-            "name": name,
-            "surname": surname,
-            "user_auth_id": id,
-            "api_key" : code
-        ]
-        
-        print("Parameters : \(parameters)")
-        
-        Alamofire.request(.POST, login_base_url+"/api/v1/register", parameters: parameters, encoding: .JSON
-            )
-            .responseJSON {(request, response, data, error) in
-                if error == nil{
-                    
-                    print(" \nError : \(error) \n")
-                    
-                    if let json = data as? NSDictionary {
-                        if let info = json["user"] as? NSArray
-                        {
-                            let dic : NSDictionary = info[0] as NSDictionary
-                            self.user.token = dic["token"] as String
-                            
-                            println("info : \(info)")
-                        }
+        let network = NetworkApi()
+        network.registerUser(name, surname: surname, id: id, code: code) { (request, response, data, error) -> Void in
+            
+            if error == nil{
+                
+                print(" \nError : \(error) \n")
+                
+                if let json = data as? NSDictionary {
+                    if let info = json["user"] as? NSArray
+                    {
+                        let dic : NSDictionary = info[0] as NSDictionary
+                        self.user.token = dic["token"] as String
                         
-                        var message = json["message"]? as String
-                        println("message : \(message)")
+                        println("info : \(info)")
                     }
                     
-                    println("TOKEN : \(self.user.token) \n")
-                    
-                    self.saveDefaults(self.user)
-                    
-                    HUDController.sharedController.hide(animated: true)
-                    self.goDetailPage()
-                    
-                } else {
-                    self.alertWithTitle("Hata", message: "Giriş yapılırken bir hata ile karşılaşıldı !")
+                    var message = json["message"]? as String
+                    println("message : \(message)")
                 }
+                
+                println("TOKEN : \(self.user.token) \n")
+                
+                self.saveDefaults(self.user)
+                
+                HUDController.sharedController.hide(animated: true)
+                self.goDetailPage()
+                
+            } else {
+                self.alertWithTitle("Hata", message: "Giriş yapılırken bir hata ile karşılaşıldı !")
+            }
+            
         }
-        
     }
     
     /* ###################################################### */
+    
+    func alertWithTitle(title: String, message: String) {
+        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }
 

@@ -13,11 +13,13 @@ class App {
     var appName: String?
     var appDescription: String?
     var appDownloadURL: String?
+    var appImageURL: String?
     
     init(appInfo: NSDictionary) {
         self.appID = appInfo["app_id"] as? String
         self.appName = appInfo["app_name"] as? String
         self.appDescription = appInfo["app_description"] as? String
         self.appDownloadURL = appInfo["app_download_url"] as? String
+        self.appImageURL = appInfo["app_image_url"] as? String
     }
 }

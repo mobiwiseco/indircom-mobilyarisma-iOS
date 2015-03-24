@@ -7,6 +7,7 @@ target 'IndircomMobilYarisma' do
 
 
 pod 'Facebook-iOS-SDK'
+pod 'pop', '~> 1.0'
 
 end
 

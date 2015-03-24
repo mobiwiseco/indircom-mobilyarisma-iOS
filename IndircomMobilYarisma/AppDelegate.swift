@@ -132,7 +132,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navCon = self.window?.rootViewController as UINavigationController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let votePage = storyboard.instantiateViewControllerWithIdentifier("DetailPageVC") as DetailPageVC
-        votePage.userToken = Defaults["token"].string!
         self.window?.rootViewController = votePage
 //        navCon.pushViewController(votePage, animated: true)
         
