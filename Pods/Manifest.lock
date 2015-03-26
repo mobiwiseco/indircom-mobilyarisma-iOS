@@ -1,16 +1,21 @@
 PODS:
   - Bolts (1.1.4)
-  - Facebook-iOS-SDK (3.23.1):
+  - Facebook-iOS-SDK (3.23.2):
     - Bolts (~> 1.0)
   - pop (1.0.7)
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
 
 DEPENDENCIES:
   - Facebook-iOS-SDK
   - pop (~> 1.0)
+  - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
   Bolts: dd9fb8433d67f5acc3b6b4d1379bbc5513d716c1
-  Facebook-iOS-SDK: 89dae50e975ebab95a01b0962d27277fc9cf08fd
+  Facebook-iOS-SDK: cd87f0b2f0c1d9574b44e8fa2baacc275524bac3
   pop: 2f14a1ea61339767af9e66741b418c831b3844df
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
 COCOAPODS: 0.36.0
