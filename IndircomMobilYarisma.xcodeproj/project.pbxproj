@@ -10,6 +10,13 @@
 		183358F51ABF3D2800BE5C12 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183358F41ABF3D2800BE5C12 /* App.swift */; };
 		598685021ABF5C4D00585449 /* IJReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598685011ABF5C4D00585449 /* IJReachability.swift */; };
 		598685071AC036E000585449 /* NetworkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598685061AC036DF00585449 /* NetworkApi.swift */; };
+		598B414F1AC359A900F39B13 /* InfoPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598B414E1AC359A900F39B13 /* InfoPageVC.swift */; };
+		598B415C1AC4A35500F39B13 /* PresentingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598B415B1AC4A35500F39B13 /* PresentingAnimationController.swift */; };
+		598B415E1AC584E700F39B13 /* DismissingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598B415D1AC584E700F39B13 /* DismissingAnimationController.swift */; };
+		598B41601AC5C84C00F39B13 /* icon_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 598B415F1AC5C84C00F39B13 /* icon_menu.png */; };
+		598BE4DF1AC1E1BD00D13545 /* bg_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 598BE4DE1AC1E1BD00D13545 /* bg_green.png */; };
+		598BE4E31AC1E2BF00D13545 /* icon_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 598BE4E11AC1E2BF00D13545 /* icon_close.png */; };
+		598BE4E41AC1E2BF00D13545 /* icon_download.png in Resources */ = {isa = PBXBuildFile; fileRef = 598BE4E21AC1E2BF00D13545 /* icon_download.png */; };
 		59BDA1B21AB35D2A00DEBCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA1B11AB35D2A00DEBCAF /* AppDelegate.swift */; };
 		59BDA1B41AB35D2A00DEBCAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA1B31AB35D2A00DEBCAF /* ViewController.swift */; };
 		59BDA1B71AB35D2A00DEBCAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA1B51AB35D2A00DEBCAF /* Main.storyboard */; };
@@ -91,6 +98,13 @@
 		18644F1C1ABE29E800D6C386 /* roboto-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "roboto-medium.ttf"; sourceTree = "<group>"; };
 		598685011ABF5C4D00585449 /* IJReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJReachability.swift; sourceTree = "<group>"; };
 		598685061AC036DF00585449 /* NetworkApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkApi.swift; sourceTree = "<group>"; };
+		598B414E1AC359A900F39B13 /* InfoPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPageVC.swift; sourceTree = "<group>"; };
+		598B415B1AC4A35500F39B13 /* PresentingAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingAnimationController.swift; sourceTree = "<group>"; };
+		598B415D1AC584E700F39B13 /* DismissingAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissingAnimationController.swift; sourceTree = "<group>"; };
+		598B415F1AC5C84C00F39B13 /* icon_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menu.png; sourceTree = "<group>"; };
+		598BE4DE1AC1E1BD00D13545 /* bg_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_green.png; sourceTree = "<group>"; };
+		598BE4E11AC1E2BF00D13545 /* icon_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_close.png; sourceTree = "<group>"; };
+		598BE4E21AC1E2BF00D13545 /* icon_download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_download.png; sourceTree = "<group>"; };
 		59BDA1AC1AB35D2A00DEBCAF /* IndircomMobilYarisma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndircomMobilYarisma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BDA1B01AB35D2A00DEBCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59BDA1B11AB35D2A00DEBCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +190,15 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		598B415A1AC4A33200F39B13 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				598B415B1AC4A35500F39B13 /* PresentingAnimationController.swift */,
+				598B415D1AC584E700F39B13 /* DismissingAnimationController.swift */,
+			);
+			name = Animator;
+			sourceTree = "<group>";
+		};
 		59BDA1A31AB35D2A00DEBCAF = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +226,7 @@
 				59BDA1B11AB35D2A00DEBCAF /* AppDelegate.swift */,
 				59BDA1B31AB35D2A00DEBCAF /* ViewController.swift */,
 				59BDA28D1ABC820F00DEBCAF /* DetailPageVC.swift */,
+				598B414E1AC359A900F39B13 /* InfoPageVC.swift */,
 				59BDA1B51AB35D2A00DEBCAF /* Main.storyboard */,
 				59BDA1B81AB35D2A00DEBCAF /* Images.xcassets */,
 				59BDA1BA1AB35D2A00DEBCAF /* LaunchScreen.xib */,
@@ -211,6 +235,7 @@
 				18644F1B1ABE296800D6C386 /* Fonts */,
 				59BDA1D81AB8CAC100DEBCAF /* Libraries */,
 				59BDA2F91ABCC08000DEBCAF /* Modals */,
+				598B415A1AC4A33200F39B13 /* Animator */,
 				59BDA1AF1AB35D2A00DEBCAF /* Supporting Files */,
 				59BDA1D11AB36E0300DEBCAF /* Indircom-Bridging-Header.h */,
 			);
@@ -256,6 +281,10 @@
 		59BDA27C1ABC6EFC00DEBCAF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				598B415F1AC5C84C00F39B13 /* icon_menu.png */,
+				598BE4E11AC1E2BF00D13545 /* icon_close.png */,
+				598BE4E21AC1E2BF00D13545 /* icon_download.png */,
+				598BE4DE1AC1E1BD00D13545 /* bg_green.png */,
 				59BDA2881ABC75C900DEBCAF /* indircom_ust_logo.png */,
 				59BDA2861ABC72DA00DEBCAF /* bg_blue.jpg */,
 				59BDA2821ABC71DA00DEBCAF /* icon_facebook.png */,
@@ -418,11 +447,15 @@
 				59BDA2851ABC71DA00DEBCAF /* icon_twitter.png in Resources */,
 				59BDA1D61AB7481100DEBCAF /* TwitterKitResources.bundle in Resources */,
 				59D979FC1ABEF287004A3034 /* Images.xcassets in Resources */,
+				598BE4E31AC1E2BF00D13545 /* icon_close.png in Resources */,
 				59BDA2F51ABCB43300DEBCAF /* icon_like_unselected.png in Resources */,
+				598BE4E41AC1E2BF00D13545 /* icon_download.png in Resources */,
 				59BDA1B71AB35D2A00DEBCAF /* Main.storyboard in Resources */,
 				59D979FD1ABEF287004A3034 /* Info.plist in Resources */,
 				59BDA2871ABC72DA00DEBCAF /* bg_blue.jpg in Resources */,
+				598BE4DF1AC1E1BD00D13545 /* bg_green.png in Resources */,
 				59BDA1BC1AB35D2A00DEBCAF /* LaunchScreen.xib in Resources */,
+				598B41601AC5C84C00F39B13 /* icon_menu.png in Resources */,
 				59BDA2841ABC71DA00DEBCAF /* icon_facebook.png in Resources */,
 				59BDA1B91AB35D2A00DEBCAF /* Images.xcassets in Resources */,
 			);
@@ -481,6 +514,7 @@
 				59BDA1B21AB35D2A00DEBCAF /* AppDelegate.swift in Sources */,
 				59D979EC1ABE1C21004A3034 /* SwiftyUserDefaults.swift in Sources */,
 				59D979FA1ABEF287004A3034 /* HUDContentView.swift in Sources */,
+				598B415C1AC4A35500F39B13 /* PresentingAnimationController.swift in Sources */,
 				59BDA28E1ABC820F00DEBCAF /* DetailPageVC.swift in Sources */,
 				59BDA2FB1ABCC09100DEBCAF /* User.swift in Sources */,
 				59D979F81ABEF287004A3034 /* FrameView.swift in Sources */,
@@ -488,6 +522,8 @@
 				59D979F91ABEF287004A3034 /* HUDAssets.swift in Sources */,
 				183358F51ABF3D2800BE5C12 /* App.swift in Sources */,
 				59BDA27E1ABC70AE00DEBCAF /* SwiftColors.swift in Sources */,
+				598B415E1AC584E700F39B13 /* DismissingAnimationController.swift in Sources */,
+				598B414F1AC359A900F39B13 /* InfoPageVC.swift in Sources */,
 				59D979FE1ABEF287004A3034 /* Window.swift in Sources */,
 				598685021ABF5C4D00585449 /* IJReachability.swift in Sources */,
 			);

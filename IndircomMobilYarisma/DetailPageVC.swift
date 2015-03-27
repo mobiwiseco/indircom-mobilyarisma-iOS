@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class DetailPageVC: UIViewController {
+class DetailPageVC: UIViewController{
     
     @IBOutlet var likeButton: UIButton!
     @IBOutlet var dislikeButton: UIButton!
@@ -28,7 +28,6 @@ class DetailPageVC: UIViewController {
 
         self.getUnratedApps()
         
-
     }
     
     func updateUI(position: Int) {
@@ -167,17 +166,7 @@ class DetailPageVC: UIViewController {
         button.layer .pop_addAnimation(positionAnimation, forKey: "positionAnimation")
     }
     
-//    func scaleLabelAnimation(appNameLabel : UILabel!)
-//    {
-//        let scaleAnimation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
-//        scaleAnimation.toValue = NSValue(CGSize: CGSizeMake(0.5, 0.5))
-//        scaleAnimation.springBounciness = 10.0
-//        scaleAnimation.completionBlock = {(animation, finished) in
-//            
-//        }
-//        
-//        appNameLabel.pop_addAnimation(scaleAnimation, forKey: "springAnimation")
-//    }
     
+
     
 }

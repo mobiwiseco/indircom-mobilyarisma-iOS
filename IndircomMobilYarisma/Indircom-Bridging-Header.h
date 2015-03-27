@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <FacebookSDK.h>
 #import <pop/POP.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #define IndircomMobilYarisma_Indircom_Bridging_Header_h
 
