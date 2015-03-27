@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class DetailPageVC: UIViewController {
+class DetailPageVC: UIViewController{
     
     @IBOutlet var likeButton: UIButton!
     @IBOutlet var dislikeButton: UIButton!
@@ -194,7 +194,6 @@ class DetailPageVC: UIViewController {
         }
         button.layer.pop_addAnimation(positionAnimation, forKey: "positionAnimation")
     }
-    
     
     func shakeButtonWithPop(button: UIButton!, shakeDirection: Int, currentPosition: Int)
     {

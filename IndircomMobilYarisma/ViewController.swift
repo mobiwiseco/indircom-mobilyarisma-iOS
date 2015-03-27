@@ -36,7 +36,6 @@ class ViewController: UIViewController {
     
     @IBAction func twitterLogInTapped(sender: AnyObject)
     {
-        HUDController.sharedController.show()
 
         if IJReachability.isConnectedToNetwork(){
             Twitter.sharedInstance().logInWithCompletion {
@@ -47,7 +46,7 @@ class ViewController: UIViewController {
                     println("Session : \(session)")
                     
                     
-                    
+                    HUDController.sharedController.show()
                     Twitter.sharedInstance().APIClient.loadUserWithID(session.userID, completion: { (user : TWTRUser!, error :NSError!) -> Void in
                         
                         println("USER info TWITTER : \(user.profileImageLargeURL)")
@@ -68,6 +67,7 @@ class ViewController: UIViewController {
                     
                 } else {
                     println("error: \(error.localizedDescription)");
+                    HUDController.sharedController.hide(animated: true)
                 }
             }
 
@@ -131,6 +131,8 @@ class ViewController: UIViewController {
         else
         {
             self.alertWithTitle("Bağlantı Hatası", message: "Lütfen internet bağlantınızı kontrol ediniz")
+            HUDController.sharedController.hide(animated: true)
+
         }
         
         
