@@ -74,6 +74,8 @@ class ViewController: UIViewController {
         }
         else{
             self.alertWithTitle("Bağlantı Hatası", message: "Lütfen internet bağlantınızı kontrol ediniz")
+            HUDController.sharedController.hide(animated: true)
+
         }
         
     }
@@ -89,10 +91,8 @@ class ViewController: UIViewController {
                 FBSession.activeSession().closeAndClearTokenInformation()
                 facebookLabel.text! = "Facebook ile giriş"
                 
-                
             }
-            else
-            {
+            else{
                 
                 HUDController.sharedController.show()
 
@@ -116,10 +116,7 @@ class ViewController: UIViewController {
                             self.user.surname = result["last_name"] as String
                             self.user.id = result["id"] as String
                             
-                            
                             //Facebook ile giriş yaptıktan sonra servise post edip kaydı gerçekleştiriyorz
-//                            self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, code: self.user.code)
-                            
                             self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, code: self.user.code)
                             
                         })
@@ -142,8 +139,6 @@ class ViewController: UIViewController {
     {
         self.performSegueWithIdentifier("DetailPageVC", sender: self)
     }
-    
-   
     
     /* Request atılıp veri alındıktan sonra user objemize kayıt edip onu da userdefault'a kaydediyoruz*/
     func saveDefaults(userObj : User)
