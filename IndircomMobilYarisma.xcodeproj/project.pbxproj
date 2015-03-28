@@ -17,6 +17,11 @@
 		598BE4DF1AC1E1BD00D13545 /* bg_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 598BE4DE1AC1E1BD00D13545 /* bg_green.png */; };
 		598BE4E31AC1E2BF00D13545 /* icon_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 598BE4E11AC1E2BF00D13545 /* icon_close.png */; };
 		598BE4E41AC1E2BF00D13545 /* icon_download.png in Resources */ = {isa = PBXBuildFile; fileRef = 598BE4E21AC1E2BF00D13545 /* icon_download.png */; };
+		599887E41AC6B1540062EC7E /* AboutPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599887E31AC6B1540062EC7E /* AboutPageVC.swift */; };
+		599887E71AC6B2B30062EC7E /* bg_pink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 599887E61AC6B2B30062EC7E /* bg_pink.jpg */; };
+		599887EA1AC6B7900062EC7E /* developedby.png in Resources */ = {isa = PBXBuildFile; fileRef = 599887E81AC6B7900062EC7E /* developedby.png */; };
+		599887EB1AC6B7900062EC7E /* mobiwise_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 599887E91AC6B7900062EC7E /* mobiwise_logo.png */; };
+		599887ED1AC6B8720062EC7E /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 599887EC1AC6B8720062EC7E /* back.png */; };
 		59BDA1B21AB35D2A00DEBCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA1B11AB35D2A00DEBCAF /* AppDelegate.swift */; };
 		59BDA1B41AB35D2A00DEBCAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA1B31AB35D2A00DEBCAF /* ViewController.swift */; };
 		59BDA1B71AB35D2A00DEBCAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA1B51AB35D2A00DEBCAF /* Main.storyboard */; };
@@ -105,6 +110,11 @@
 		598BE4DE1AC1E1BD00D13545 /* bg_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_green.png; sourceTree = "<group>"; };
 		598BE4E11AC1E2BF00D13545 /* icon_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_close.png; sourceTree = "<group>"; };
 		598BE4E21AC1E2BF00D13545 /* icon_download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_download.png; sourceTree = "<group>"; };
+		599887E31AC6B1540062EC7E /* AboutPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPageVC.swift; sourceTree = "<group>"; };
+		599887E61AC6B2B30062EC7E /* bg_pink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_pink.jpg; sourceTree = "<group>"; };
+		599887E81AC6B7900062EC7E /* developedby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = developedby.png; sourceTree = "<group>"; };
+		599887E91AC6B7900062EC7E /* mobiwise_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mobiwise_logo.png; sourceTree = "<group>"; };
+		599887EC1AC6B8720062EC7E /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		59BDA1AC1AB35D2A00DEBCAF /* IndircomMobilYarisma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndircomMobilYarisma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BDA1B01AB35D2A00DEBCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59BDA1B11AB35D2A00DEBCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +237,7 @@
 				59BDA1B31AB35D2A00DEBCAF /* ViewController.swift */,
 				59BDA28D1ABC820F00DEBCAF /* DetailPageVC.swift */,
 				598B414E1AC359A900F39B13 /* InfoPageVC.swift */,
+				599887E31AC6B1540062EC7E /* AboutPageVC.swift */,
 				59BDA1B51AB35D2A00DEBCAF /* Main.storyboard */,
 				59BDA1B81AB35D2A00DEBCAF /* Images.xcassets */,
 				59BDA1BA1AB35D2A00DEBCAF /* LaunchScreen.xib */,
@@ -281,6 +292,10 @@
 		59BDA27C1ABC6EFC00DEBCAF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				599887EC1AC6B8720062EC7E /* back.png */,
+				599887E81AC6B7900062EC7E /* developedby.png */,
+				599887E91AC6B7900062EC7E /* mobiwise_logo.png */,
+				599887E61AC6B2B30062EC7E /* bg_pink.jpg */,
 				598B415F1AC5C84C00F39B13 /* icon_menu.png */,
 				598BE4E11AC1E2BF00D13545 /* icon_close.png */,
 				598BE4E21AC1E2BF00D13545 /* icon_download.png */,
@@ -447,17 +462,21 @@
 				59BDA2851ABC71DA00DEBCAF /* icon_twitter.png in Resources */,
 				59BDA1D61AB7481100DEBCAF /* TwitterKitResources.bundle in Resources */,
 				59D979FC1ABEF287004A3034 /* Images.xcassets in Resources */,
+				599887E71AC6B2B30062EC7E /* bg_pink.jpg in Resources */,
 				598BE4E31AC1E2BF00D13545 /* icon_close.png in Resources */,
 				59BDA2F51ABCB43300DEBCAF /* icon_like_unselected.png in Resources */,
 				598BE4E41AC1E2BF00D13545 /* icon_download.png in Resources */,
 				59BDA1B71AB35D2A00DEBCAF /* Main.storyboard in Resources */,
 				59D979FD1ABEF287004A3034 /* Info.plist in Resources */,
+				599887EA1AC6B7900062EC7E /* developedby.png in Resources */,
 				59BDA2871ABC72DA00DEBCAF /* bg_blue.jpg in Resources */,
+				599887ED1AC6B8720062EC7E /* back.png in Resources */,
 				598BE4DF1AC1E1BD00D13545 /* bg_green.png in Resources */,
 				59BDA1BC1AB35D2A00DEBCAF /* LaunchScreen.xib in Resources */,
 				598B41601AC5C84C00F39B13 /* icon_menu.png in Resources */,
 				59BDA2841ABC71DA00DEBCAF /* icon_facebook.png in Resources */,
 				59BDA1B91AB35D2A00DEBCAF /* Images.xcassets in Resources */,
+				599887EB1AC6B7900062EC7E /* mobiwise_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +537,7 @@
 				59BDA28E1ABC820F00DEBCAF /* DetailPageVC.swift in Sources */,
 				59BDA2FB1ABCC09100DEBCAF /* User.swift in Sources */,
 				59D979F81ABEF287004A3034 /* FrameView.swift in Sources */,
+				599887E41AC6B1540062EC7E /* AboutPageVC.swift in Sources */,
 				59D979FF1ABEF287004A3034 /* WindowRootViewController.swift in Sources */,
 				59D979F91ABEF287004A3034 /* HUDAssets.swift in Sources */,
 				183358F51ABF3D2800BE5C12 /* App.swift in Sources */,
@@ -664,6 +684,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IndircomMobilYarisma/Indircom-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -682,6 +703,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IndircomMobilYarisma/Indircom-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

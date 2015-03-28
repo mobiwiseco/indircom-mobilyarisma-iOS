@@ -8,7 +8,7 @@ PODS:
   - SDWebImage/Core (3.7.2)
 
 DEPENDENCIES:
-  - Facebook-iOS-SDK
+  - Facebook-iOS-SDK (~> 3.23.2)
   - pop (~> 1.0)
   - SDWebImage (~> 3.7)
 

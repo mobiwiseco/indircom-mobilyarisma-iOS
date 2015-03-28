@@ -101,12 +101,15 @@ class DetailPageVC: UIViewController{
     @IBAction func onPreviousButtonClick(sender: UIButton) {
         self.shakeButtonWithPop(self.previousButton, shakeDirection: -1, currentPosition: --self.currentPosition)
     }
+    
+    @IBAction func aboutPageButtonTapped(sender: UIButton) {
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     /* Servis Methodları */
     /* ###################################################### */
@@ -160,7 +163,6 @@ class DetailPageVC: UIViewController{
     }
     /* ###################################################### */
 
-    
     func appRateConfig(rate : String)
     {
         if( appList.count > 0){
@@ -207,4 +209,23 @@ class DetailPageVC: UIViewController{
         }
         button.layer.pop_addAnimation(positionAnimation, forKey: "positionAnimation")
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if(segue.identifier == "InfoPageVC"){
+            
+            let infoPage = segue.destinationViewController as InfoPageVC
+            var currentApp : App = appList[self.currentPosition]
+            infoPage.currentApp = currentApp
+            
+        }
+        
+        else if(segue.identifier == "AboutPageVC")
+        {
+            let aboutPage = segue.destinationViewController as AboutPageVC
+            
+        }
+        
+    }
+    
 }

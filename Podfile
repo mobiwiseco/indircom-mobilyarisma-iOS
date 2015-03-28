@@ -6,7 +6,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'IndircomMobilYarisma' do
 
 
-pod 'Facebook-iOS-SDK'
+pod 'Facebook-iOS-SDK', '~>3.23.2'
 pod 'pop', '~> 1.0'
 pod 'SDWebImage', '~>3.7'
 
