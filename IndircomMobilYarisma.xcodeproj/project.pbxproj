@@ -22,6 +22,8 @@
 		599887EA1AC6B7900062EC7E /* developedby.png in Resources */ = {isa = PBXBuildFile; fileRef = 599887E81AC6B7900062EC7E /* developedby.png */; };
 		599887EB1AC6B7900062EC7E /* mobiwise_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 599887E91AC6B7900062EC7E /* mobiwise_logo.png */; };
 		599887ED1AC6B8720062EC7E /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 599887EC1AC6B8720062EC7E /* back.png */; };
+		59B1FF921AC9960400954B26 /* icon_big_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B1FF911AC9960400954B26 /* icon_big_like.png */; };
+		59B1FF951AC9A9DD00954B26 /* ThanksPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B1FF941AC9A9DD00954B26 /* ThanksPageVC.swift */; };
 		59BDA1B21AB35D2A00DEBCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA1B11AB35D2A00DEBCAF /* AppDelegate.swift */; };
 		59BDA1B41AB35D2A00DEBCAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA1B31AB35D2A00DEBCAF /* ViewController.swift */; };
 		59BDA1B71AB35D2A00DEBCAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BDA1B51AB35D2A00DEBCAF /* Main.storyboard */; };
@@ -115,6 +117,8 @@
 		599887E81AC6B7900062EC7E /* developedby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = developedby.png; sourceTree = "<group>"; };
 		599887E91AC6B7900062EC7E /* mobiwise_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mobiwise_logo.png; sourceTree = "<group>"; };
 		599887EC1AC6B8720062EC7E /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		59B1FF911AC9960400954B26 /* icon_big_like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_big_like.png; sourceTree = "<group>"; };
+		59B1FF941AC9A9DD00954B26 /* ThanksPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThanksPageVC.swift; sourceTree = "<group>"; };
 		59BDA1AC1AB35D2A00DEBCAF /* IndircomMobilYarisma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndircomMobilYarisma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BDA1B01AB35D2A00DEBCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59BDA1B11AB35D2A00DEBCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 				59BDA28D1ABC820F00DEBCAF /* DetailPageVC.swift */,
 				598B414E1AC359A900F39B13 /* InfoPageVC.swift */,
 				599887E31AC6B1540062EC7E /* AboutPageVC.swift */,
+				59B1FF941AC9A9DD00954B26 /* ThanksPageVC.swift */,
 				59BDA1B51AB35D2A00DEBCAF /* Main.storyboard */,
 				59BDA1B81AB35D2A00DEBCAF /* Images.xcassets */,
 				59BDA1BA1AB35D2A00DEBCAF /* LaunchScreen.xib */,
@@ -292,6 +297,7 @@
 		59BDA27C1ABC6EFC00DEBCAF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				59B1FF911AC9960400954B26 /* icon_big_like.png */,
 				599887EC1AC6B8720062EC7E /* back.png */,
 				599887E81AC6B7900062EC7E /* developedby.png */,
 				599887E91AC6B7900062EC7E /* mobiwise_logo.png */,
@@ -468,6 +474,7 @@
 				598BE4E41AC1E2BF00D13545 /* icon_download.png in Resources */,
 				59BDA1B71AB35D2A00DEBCAF /* Main.storyboard in Resources */,
 				59D979FD1ABEF287004A3034 /* Info.plist in Resources */,
+				59B1FF921AC9960400954B26 /* icon_big_like.png in Resources */,
 				599887EA1AC6B7900062EC7E /* developedby.png in Resources */,
 				59BDA2871ABC72DA00DEBCAF /* bg_blue.jpg in Resources */,
 				599887ED1AC6B8720062EC7E /* back.png in Resources */,
@@ -527,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B1FF951AC9A9DD00954B26 /* ThanksPageVC.swift in Sources */,
 				598685071AC036E000585449 /* NetworkApi.swift in Sources */,
 				59BDA1B41AB35D2A00DEBCAF /* ViewController.swift in Sources */,
 				59D979FB1ABEF287004A3034 /* HUDController.swift in Sources */,

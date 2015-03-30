@@ -40,6 +40,7 @@ class DetailPageVC: UIViewController{
     
     func updateUI(position: Int, flipDirection: Int) {
         let currentApp = appList[position]
+     
         
         if let a = logo2 as UIView? {
             logo2.removeFromSuperview()
@@ -78,6 +79,8 @@ class DetailPageVC: UIViewController{
         } else {
             self.previousButton.hidden = true
         }
+        
+      
     }
     
     @IBAction func onDislikeButtonClick(sender: UIButton) {
@@ -118,7 +121,7 @@ class DetailPageVC: UIViewController{
     {
         let network = NetworkApi()
         network.getUnratedApps(userID!, token: token!) { (request, response, data, error) -> Void in
-            print(data)
+            print(data!)
             if let feed = data as? NSDictionary {
                 if let entries = feed["apps"] as? NSArray {
                     for entry in entries {
@@ -128,6 +131,10 @@ class DetailPageVC: UIViewController{
                         }
                     }
                     self.getImages(0)
+                }
+                else{
+                    println("app yok arkadaş")
+                    self.performSegueWithIdentifier("ThanksPageVC", sender: self)
                 }
             } else {
                 //we should handle the error
@@ -170,10 +177,17 @@ class DetailPageVC: UIViewController{
             self.sendAppRate(currentApp.appID!, rate:rate)
             self.appList.removeAtIndex(self.currentPosition)
             self.imageList.removeAtIndex(self.currentPosition)
+            
             if currentPosition < appList.count {
                 self.updateUI(self.currentPosition, flipDirection: 1)
-            } else if appList.count > 0 {
+            }
+            else if appList.count > 0 {
                 self.updateUI(--self.currentPosition, flipDirection: 1)
+            }
+            else{
+                self.performSegueWithIdentifier("ThanksPageVC", sender: self)
+                Defaults.remove("token")
+                Defaults.remove("id")
             }
         }
     }

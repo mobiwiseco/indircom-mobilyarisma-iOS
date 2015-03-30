@@ -19,7 +19,7 @@ class App {
         self.appID = appInfo["app_id"] as? String
         self.appName = appInfo["app_name"] as? String
         self.appDescription = appInfo["app_description"] as? String
-        self.appDownloadURL = appInfo["app_download_url"] as? String
+        self.appDownloadURL = appInfo["app_ios_download_url"] as? String
         self.appImageURL = appInfo["app_image_url"] as? String
     }
 }
