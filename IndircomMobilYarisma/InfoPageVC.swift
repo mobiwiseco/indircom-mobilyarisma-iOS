@@ -14,19 +14,16 @@ class InfoPageVC: UIViewController {
     @IBOutlet var closeButton: UIButton!
     @IBOutlet var appImage: UIImageView!
     @IBOutlet var appNameLabel: UILabel!
-    @IBOutlet var appCategoryLabel: UILabel!
     @IBOutlet var appContentTV: UITextView!
     @IBOutlet var downloadButton: UIButton!
+    @IBOutlet var downloadButtonView: UIView!
     
     var currentApp : App?
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setUIwithAppObject()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +35,6 @@ class InfoPageVC: UIViewController {
     func setUIwithAppObject()
     {
         appNameLabel?.text = self.currentApp?.appName!
-        appCategoryLabel?.text = self.currentApp?.appName!
         appContentTV?.text = self.currentApp?.appDescription!
         
         if var urlStr = self.currentApp?.appImageURL{
@@ -46,8 +42,12 @@ class InfoPageVC: UIViewController {
             
             self.appImage?.sd_setImageWithURL(imageURL, completed: { (image : UIImage!, error : NSError!, cashType : SDImageCacheType, imageUrl : NSURL!) -> Void in
                 
-                
             })
+        }
+        
+        if currentApp?.appDownloadURL?.rangeOfString("itunes.apple") == nil {
+            self.downloadButton.enabled = false
+            self.downloadButtonView.hidden = true
         }
     }
     
