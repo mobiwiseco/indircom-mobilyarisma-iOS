@@ -26,6 +26,8 @@ class DetailPageVC: UIViewController{
     var logo1 = UIView()
     var logo2 = UIView()
     
+    let placeHolderImage = UIImageView(image: UIImage(named: "mobiwise_logo.png"))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,20 +36,32 @@ class DetailPageVC: UIViewController{
         
         self.nextButton.hidden = true
         self.previousButton.hidden = true
+        
+        placeHolderImage.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        appLogo.addSubview(placeHolderImage)
+        
+        appName.text = "Loading.."
 
         self.getUnratedApps()
     }
     
     func updateUI(position: Int, flipDirection: Int) {
         let currentApp = appList[position]
-     
         
+        if let a = placeHolderImage as UIView? {
+            placeHolderImage.removeFromSuperview()
+        }
+     
         if let a = logo2 as UIView? {
             logo2.removeFromSuperview()
         }
         
         logo1 = UIImageView(image: imageList[(position == 0 ? 0 : position-1)])
-        logo2 = UIImageView(image: imageList[position])
+        if let image = imageList[position] as UIImage? {
+            logo2 = UIImageView(image: imageList[position])
+        } else {
+            logo2 = UIImageView(image: UIImage(named: "mobiwise_logo.png"))
+        }
         
         logo1.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         logo2.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
