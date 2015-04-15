@@ -26,7 +26,7 @@ class DetailPageVC: UIViewController{
     var logo1 = UIView()
     var logo2 = UIView()
     
-    let placeHolderImage = UIImageView(image: UIImage(named: "mobiwise_logo.png"))
+    let placeHolderImage = UIImageView(image: UIImage(named: "image_placeholder"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +56,18 @@ class DetailPageVC: UIViewController{
             logo2.removeFromSuperview()
         }
         
-        logo1 = UIImageView(image: imageList[(position == 0 ? 0 : position-1)])
-        if let image = imageList[position] as UIImage? {
+        if imageList.count < position {
+            logo1 = placeHolderImage
+        } else {
+            logo1 = UIImageView(image: imageList[(position == 0 ? 0 : position-1)])
+        }
+        
+        if imageList.count <= position {
+            logo2 = placeHolderImage
+        } else if let image = imageList[position] as UIImage? {
             logo2 = UIImageView(image: imageList[position])
         } else {
-            logo2 = UIImageView(image: UIImage(named: "mobiwise_logo.png"))
+            logo2 = UIImageView(image: UIImage(named: "image_placeholder"))
         }
         
         logo1.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
@@ -168,7 +175,7 @@ class DetailPageVC: UIViewController{
                 self.getImages(position+1)
             }
             // update UI when the first app image is downloaded
-            if (position == 0) {
+            if (position == 0 || self.currentPosition == self.imageList.count - 1) {
                 self.updateUI(position, flipDirection: 1)
             }
         })
