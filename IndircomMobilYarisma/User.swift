@@ -16,6 +16,7 @@ class User: NSObject {
     var code : String = ""
     var token : String = ""
     var image : String = ""
+    var email : String = ""
     
     override init()
     {

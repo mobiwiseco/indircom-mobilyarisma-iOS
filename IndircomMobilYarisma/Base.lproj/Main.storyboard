@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y2a-Ma-3pR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y2a-Ma-3pR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -15,7 +15,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="IndircomMobilYarisma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="indir_com_Yarıs_ma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -99,7 +99,7 @@
                                     <constraint firstAttribute="centerY" secondItem="hIP-lw-s30" secondAttribute="centerY" id="r9c-vs-eoA"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indircom_ust_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="2DL-zP-HEa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indircom_ust_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="2DL-zP-HEa">
                                 <rect key="frame" x="225" y="40" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="5MY-BB-d76"/>
@@ -107,17 +107,17 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobil Uygulamalar Yarışıyor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1e-4N-gsp">
-                                <rect key="frame" x="210" y="220" width="180" height="80"/>
+                                <rect key="frame" x="210" y="210" width="180" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="g1v-fU-JaB"/>
-                                    <constraint firstAttribute="width" constant="180" id="s4M-oG-aVO"/>
+                                    <constraint firstAttribute="width" constant="180" id="fjv-WO-oxm"/>
+                                    <constraint firstAttribute="height" constant="80" id="tlf-iW-BYI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.043137254901960784" green="0.4392156862745098" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halk oylamasından geçen 10 uygulama juri tarafından değerlendiriliyor. Kazanan uygulamalar büyük ödüllere kavuşuyor." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JF-iw-Boo">
-                                <rect key="frame" x="16" y="319" width="568" height="80"/>
+                                <rect key="frame" x="16" y="294" width="568" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="amM-7e-5kG"/>
                                 </constraints>
@@ -130,22 +130,21 @@
                         <constraints>
                             <constraint firstItem="2DL-zP-HEa" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="1dj-vH-cte"/>
                             <constraint firstItem="KNx-VC-QdR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="1zw-zo-Mlt"/>
+                            <constraint firstItem="8JF-iw-Boo" firstAttribute="top" secondItem="H1e-4N-gsp" secondAttribute="bottom" constant="4" id="49X-cu-pD7"/>
                             <constraint firstAttribute="trailing" secondItem="SJ0-6n-DX3" secondAttribute="trailing" id="68x-oq-qGl"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="SJ0-6n-DX3" secondAttribute="bottom" id="EId-ak-ww5"/>
                             <constraint firstItem="8JF-iw-Boo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="Ene-1K-ewO"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="iTk-9F-uhO" secondAttribute="bottom" id="JKg-KA-xEG"/>
-                            <constraint firstItem="H1e-4N-gsp" firstAttribute="top" secondItem="2DL-zP-HEa" secondAttribute="bottom" constant="30" id="KFs-Lp-e32"/>
-                            <constraint firstAttribute="centerX" secondItem="H1e-4N-gsp" secondAttribute="centerX" id="NTK-QZ-mh6"/>
+                            <constraint firstItem="H1e-4N-gsp" firstAttribute="top" secondItem="2DL-zP-HEa" secondAttribute="bottom" constant="20" id="L4S-Ro-rqz"/>
                             <constraint firstAttribute="trailing" secondItem="KNx-VC-QdR" secondAttribute="trailing" id="OvI-e8-2rB"/>
                             <constraint firstItem="SJ0-6n-DX3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="QAN-1V-IGg"/>
-                            <constraint firstItem="KNx-VC-QdR" firstAttribute="top" secondItem="8JF-iw-Boo" secondAttribute="bottom" constant="81" id="UGb-9P-Jya"/>
                             <constraint firstItem="iTk-9F-uhO" firstAttribute="top" secondItem="KNx-VC-QdR" secondAttribute="bottom" id="VYR-Fh-Tz1"/>
                             <constraint firstAttribute="trailing" secondItem="8JF-iw-Boo" secondAttribute="trailing" constant="16" id="Xu1-Nk-qS9"/>
                             <constraint firstAttribute="trailing" secondItem="iTk-9F-uhO" secondAttribute="trailing" id="Zd1-Ou-3xD"/>
-                            <constraint firstItem="8JF-iw-Boo" firstAttribute="top" secondItem="H1e-4N-gsp" secondAttribute="bottom" constant="19" id="aAo-ey-xfI"/>
                             <constraint firstItem="SJ0-6n-DX3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="fRU-9S-j34"/>
                             <constraint firstAttribute="centerX" secondItem="2DL-zP-HEa" secondAttribute="centerX" id="jto-Se-A5F"/>
                             <constraint firstItem="iTk-9F-uhO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="lh9-3w-jH1"/>
+                            <constraint firstItem="H1e-4N-gsp" firstAttribute="centerX" secondItem="8JF-iw-Boo" secondAttribute="centerX" id="nNm-Og-bAY"/>
                             <constraint firstAttribute="centerY" secondItem="H1e-4N-gsp" secondAttribute="centerY" id="suR-Ra-u84"/>
                         </constraints>
                         <variation key="default">
@@ -168,7 +167,7 @@
         <!--Thanks PageVC-->
         <scene sceneID="ara-k2-k6D">
             <objects>
-                <viewController id="hEj-Ef-EuN" customClass="ThanksPageVC" customModule="IndircomMobilYarisma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hEj-Ef-EuN" customClass="ThanksPageVC" customModule="indir_com_Yarıs_ma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fe0-vb-CeI"/>
                         <viewControllerLayoutGuide type="bottom" id="FsX-7C-z0h"/>
@@ -187,11 +186,12 @@
                                     <constraint firstAttribute="height" constant="150" id="WCK-yo-9rH"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tüm uygulamaları oyladınız. Uygulamalara destek olduğunuz için teşekkür ederiz." lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89N-Zs-nFc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89N-Zs-nFc">
                                 <rect key="frame" x="20" y="310" width="560" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Qzn-MD-ieP"/>
                                 </constraints>
+                                <string key="text">Tüm uygulamaları oyladınız. Uygulamalara destek olduğunuz için teşekkür ederiz. Gelişmeleri "www.indir.com/yarisma" adresinden takip edebilirsiniz.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -236,7 +236,7 @@
         <!--Detail PageVC-->
         <scene sceneID="zd4-DT-1F4">
             <objects>
-                <viewController storyboardIdentifier="DetailPageVC" id="Q9O-UD-6xO" customClass="DetailPageVC" customModule="IndircomMobilYarisma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailPageVC" id="Q9O-UD-6xO" customClass="DetailPageVC" customModule="indir_com_Yarıs_ma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eGu-Fs-kZQ"/>
                         <viewControllerLayoutGuide type="bottom" id="d3H-Ru-1zv"/>
@@ -255,7 +255,7 @@
                                     <constraint firstAttribute="height" constant="200" id="e9v-7P-x3t"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWU-2J-ofT">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWU-2J-ofT">
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
                                 <color key="textColor" red="0.23921568627450981" green="0.23921568627450981" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -342,7 +342,7 @@
                                     <constraint firstAttribute="width" constant="30" id="hRs-SC-JNu"/>
                                     <constraint firstAttribute="height" constant="30" id="o2L-pO-Pg5"/>
                                 </constraints>
-                                <state key="normal" image="icon_menu.png">
+                                <state key="normal" image="icon_info">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -393,7 +393,7 @@
         <!--About PageVC-->
         <scene sceneID="RaS-Jy-5sp">
             <objects>
-                <viewController storyboardIdentifier="AboutPageVC" id="QxT-bd-zui" customClass="AboutPageVC" customModule="IndircomMobilYarisma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutPageVC" id="QxT-bd-zui" customClass="AboutPageVC" customModule="indir_com_Yarıs_ma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3ZW-3t-eaJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Smc-tL-tr2"/>
@@ -489,7 +489,7 @@
         <!--Info PageVC-->
         <scene sceneID="Ys5-cQ-m75">
             <objects>
-                <viewController storyboardIdentifier="InfoPageVC" id="m8i-i8-04F" customClass="InfoPageVC" customModule="IndircomMobilYarisma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoPageVC" id="m8i-i8-04F" customClass="InfoPageVC" customModule="indir_com_Yarıs_ma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2gS-uH-HOB"/>
                         <viewControllerLayoutGuide type="bottom" id="9PA-J5-OYD"/>
@@ -670,7 +670,7 @@
     <resources>
         <image name="back.png" width="48" height="48"/>
         <image name="bg_blue.jpg" width="720" height="1280"/>
-        <image name="bg_green.png" width="720" height="1280"/>
+        <image name="bg_green.png" width="400" height="711"/>
         <image name="bg_pink" width="720" height="1280"/>
         <image name="developedby.png" width="229" height="37"/>
         <image name="icon_big_like.png" width="250" height="250"/>
@@ -680,7 +680,6 @@
         <image name="icon_facebook.png" width="50" height="50"/>
         <image name="icon_info" width="100" height="100"/>
         <image name="icon_like_unselected" width="200" height="200"/>
-        <image name="icon_menu.png" width="40" height="40"/>
         <image name="icon_next" width="30" height="49"/>
         <image name="icon_previous" width="30" height="49"/>
         <image name="icon_twitter.png" width="50" height="41"/>

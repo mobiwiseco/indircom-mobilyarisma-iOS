@@ -61,7 +61,7 @@ class ViewController: UIViewController {
                         self.user.id = session.userID
                         self.user.image = user.profileImageLargeURL
                         
-                        self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, code: self.user.code)
+                        self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, email: "null", code: self.user.code)
                         
                     })
                     
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
 
                 // Open a session showing the user the login UI
                 // You must ALWAYS ask for public_profile permissions when opening a session
-                FBSession.openActiveSessionWithReadPermissions(["public_profile"], allowLoginUI: true, completionHandler: {
+                FBSession.openActiveSessionWithReadPermissions(["public_profile, email"], allowLoginUI: true, completionHandler: {
                     (session:FBSession!, state:FBSessionState, error:NSError!) in
                     
                     let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -114,10 +114,11 @@ class ViewController: UIViewController {
                             
                             self.user.name = result["first_name"] as String
                             self.user.surname = result["last_name"] as String
+                            self.user.email = result["email"] as String
                             self.user.id = result["id"] as String
                             
                             //Facebook ile giriş yaptıktan sonra servise post edip kaydı gerçekleştiriyorz
-                            self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, code: self.user.code)
+                            self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, email: self.user.email, code: self.user.code)
                             
                         })
                     }
@@ -152,10 +153,10 @@ class ViewController: UIViewController {
     /* Servis methodları */
     /* ###################################################### */
     
-    func registerUser(name : String , surname : String , id : String , code : String)
+    func registerUser(name: String, surname: String, id: String, email: String, code: String)
     {
         let network = NetworkApi()
-        network.registerUser(name, surname: surname, id: id, code: code) { (request, response, data, error) -> Void in
+        network.registerUser(name, surname: surname, id: id, email: email, code: code) { (request, response, data, error) -> Void in
             
             if error == nil{
                 
