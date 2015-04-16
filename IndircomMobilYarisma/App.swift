@@ -14,6 +14,7 @@ class App {
     var appDescription: String?
     var appDownloadURL: String?
     var appImageURL: String?
+    var isVoted: Bool?
     
     init(appInfo: NSDictionary) {
         self.appID = appInfo["app_id"] as? String
@@ -21,5 +22,6 @@ class App {
         self.appDescription = appInfo["app_description"] as? String
         self.appDownloadURL = appInfo["app_ios_download_url"] as? String
         self.appImageURL = appInfo["app_image_url"] as? String
+        self.isVoted = false
     }
 }

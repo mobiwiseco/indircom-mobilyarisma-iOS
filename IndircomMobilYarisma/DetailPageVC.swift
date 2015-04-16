@@ -23,6 +23,8 @@ class DetailPageVC: UIViewController{
     var token : String?
     var userID : String?
     
+    var anyPreviousAppLeft : Bool?
+    
     var logo1 = UIView()
     var logo2 = UIView()
     
@@ -56,7 +58,7 @@ class DetailPageVC: UIViewController{
             logo2.removeFromSuperview()
         }
         
-        if imageList.count < position {
+        if imageList.count <= position {
             logo1 = placeHolderImage
         } else {
             logo1 = UIImageView(image: imageList[(position == 0 ? 0 : position-1)])
@@ -89,19 +91,17 @@ class DetailPageVC: UIViewController{
         self.likeButton.setImage(UIImage(named: "icon_like_unselected"), forState: UIControlState.Normal)
         self.dislikeButton.setImage(UIImage(named: "icon_dislike_unselected"), forState: UIControlState.Normal)
         
-        if appList.count > self.currentPosition + 1 {
+        if self.getNextUnratedAppPosition(self.currentPosition) > -1 {
             self.nextButton.hidden = false
         } else {
             self.nextButton.hidden = true
         }
         
-        if 0 < self.currentPosition {
+        if self.getPreviousUnratedAppPosition(self.currentPosition) > -1 {
             self.previousButton.hidden = false
         } else {
             self.previousButton.hidden = true
         }
-        
-      
     }
     
     @IBAction func onDislikeButtonClick(sender: UIButton) {
@@ -119,11 +119,13 @@ class DetailPageVC: UIViewController{
     }
     
     @IBAction func onNextButtonClick(sender: UIButton) {
-        self.shakeButtonWithPop(self.nextButton, shakeDirection: 1, currentPosition: ++self.currentPosition)
+        self.currentPosition = self.getNextUnratedAppPosition(currentPosition)
+        self.shakeButtonWithPop(self.nextButton, shakeDirection: 1, currentPosition: self.currentPosition)
     }
     
     @IBAction func onPreviousButtonClick(sender: UIButton) {
-        self.shakeButtonWithPop(self.previousButton, shakeDirection: -1, currentPosition: --self.currentPosition)
+        self.currentPosition = self.getPreviousUnratedAppPosition(currentPosition)
+        self.shakeButtonWithPop(self.previousButton, shakeDirection: -1, currentPosition: self.currentPosition)
     }
     
     @IBAction func aboutPageButtonTapped(sender: UIButton) {
@@ -138,8 +140,7 @@ class DetailPageVC: UIViewController{
     /* Servis Methodları */
     /* ###################################################### */
     
-    func getUnratedApps()
-    {
+    func getUnratedApps() {
         let network = NetworkApi()
         network.getUnratedApps(userID!, token: token!) { (request, response, data, error) -> Void in
             print(data!)
@@ -154,7 +155,6 @@ class DetailPageVC: UIViewController{
                     self.getImages(0)
                 }
                 else{
-                    println("app yok arkadaş")
                     self.performSegueWithIdentifier("ThanksPageVC", sender: self)
                 }
             } else {
@@ -185,8 +185,7 @@ class DetailPageVC: UIViewController{
     {
         let network = NetworkApi()
         network.sendAppRate(appID, rate: rate, userID: userID!, token: token!) { (request, response, data, error) -> Void in
-            println(data?)
-            println(appID)
+            
         }
     }
     /* ###################################################### */
@@ -196,20 +195,48 @@ class DetailPageVC: UIViewController{
         if( appList.count > 0){
             var currentApp = appList[self.currentPosition]
             self.sendAppRate(currentApp.appID!, rate:rate)
-            self.appList.removeAtIndex(self.currentPosition)
-            self.imageList.removeAtIndex(self.currentPosition)
+            currentApp.isVoted = true
             
-            if currentPosition < appList.count {
-                self.updateUI(self.currentPosition, flipDirection: 1)
+            var pos = getNextUnratedAppPosition(currentPosition)
+            if pos > -1 {
+                self.currentPosition = pos
+            } else {
+                self.currentPosition = getPreviousUnratedAppPosition(currentPosition)
             }
-            else if appList.count > 0 {
-                self.updateUI(--self.currentPosition, flipDirection: 1)
-            }
-            else{
+            
+            if self.currentPosition > -1 {
+                if pos == -1 {
+                    self.updateUI(self.currentPosition, flipDirection: -1)
+                } else {
+                    self.updateUI(self.currentPosition, flipDirection: 1)
+                }
+            } else {
                 self.performSegueWithIdentifier("ThanksPageVC", sender: self)
                 Defaults.remove("token")
                 Defaults.remove("id")
             }
+        }
+    }
+    
+    func getNextUnratedAppPosition(currentPos: Int) -> Int {
+        var pos = currentPos + 1
+        if pos >= appList.count {
+            return -1
+        } else if !appList[pos].isVoted! {
+            return pos
+        } else {
+            return self.getNextUnratedAppPosition(pos)
+        }
+    }
+    
+    func getPreviousUnratedAppPosition(currentPos: Int) -> Int {
+        var pos = currentPos - 1
+        if pos == -1 {
+            return -1
+        } else if !appList[pos].isVoted! {
+            return pos
+        } else {
+            return self.getPreviousUnratedAppPosition(pos)
         }
     }
     
@@ -240,7 +267,7 @@ class DetailPageVC: UIViewController{
         positionAnimation.springBounciness = 18
         positionAnimation.completionBlock = {(animation, finished) in
             button.userInteractionEnabled = true
-            self.updateUI(currentPosition, flipDirection: shakeDirection)
+            self.updateUI(self.currentPosition, flipDirection: shakeDirection)
         }
         button.layer.pop_addAnimation(positionAnimation, forKey: "positionAnimation")
     }

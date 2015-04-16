@@ -14,12 +14,13 @@ class NetworkApi: NSObject {
     var BASE_URL : String = "http://www.akilliyazilim.org/indircom/indir.com/public"
 
     
-    func registerUser(name : String , surname : String , id : String , code : String, completionHandler:(request : NSURLRequest?, response : NSHTTPURLResponse?, data : AnyObject?, error : NSError?) -> Void) {
+    func registerUser(name : String, surname : String, id : String, email: String, code : String, completionHandler:(request : NSURLRequest?, response : NSHTTPURLResponse?, data : AnyObject?, error : NSError?) -> Void) {
         
         let parameters = [
             "name": name,
             "surname": surname,
             "user_auth_id": id,
+            "email": email,
             "api_key" : code
         ]
         
