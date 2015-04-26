@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         PKHUD.sharedHUD.dimsBackground = false
         PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
     }
     
     override func didReceiveMemoryWarning() {
