@@ -27,7 +27,7 @@ class NetworkApi: NSObject {
         
         Alamofire.request(.POST, BASE_URL+"/api/v1/register", parameters: parameters, encoding: .JSON
             )
-            .responseJSON {(request, response, data, error) in
+            .responseJSON( completionHandler:{ (request, response, data, error) in
                 if error == nil{
                     
                   completionHandler(request: request, response: response, data: data, error: error)
@@ -35,7 +35,7 @@ class NetworkApi: NSObject {
                 } else {
                     println("Error | registerUser | : \(error)")
                 }
-        }
+        })
         
         
     }
@@ -48,7 +48,7 @@ class NetworkApi: NSObject {
         
         
         Alamofire.request(.POST, BASE_URL+"/api/v1/\(userID)/unrated", parameters: parameters, encoding: .JSON)
-            .responseJSON { (request, response, data, error) in
+            .responseJSON( completionHandler:{ (request, response, data, error) in
           
                 if error == nil{
                     
@@ -58,8 +58,7 @@ class NetworkApi: NSObject {
                     println("Error | getUnratedApps | : \(error)")
                 }
                 
-        }
-        
+        })
         
     }
     
@@ -71,7 +70,7 @@ class NetworkApi: NSObject {
         
         
         Alamofire.request(.POST, BASE_URL+"/api/v1/\(userID)/rate/\(appID)", parameters: parameters, encoding: .JSON)
-            .responseJSON { (request, response, data, error) in
+            .responseJSON( completionHandler:{ (request, response, data, error) in
                 
                 if error == nil{
                     
@@ -80,10 +79,7 @@ class NetworkApi: NSObject {
                 } else {
                     println("Error | sendAppRate | : \(error)")
                 }
-                
-
-        }
-        
+        })
         
     }
     

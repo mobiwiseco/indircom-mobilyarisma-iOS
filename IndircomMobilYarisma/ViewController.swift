@@ -22,17 +22,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var contentView = HUDContentView.ProgressView()
-        HUDController.sharedController.contentView = contentView
-        
-    
+        PKHUD.sharedHUD.dimsBackground = false
+        PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     @IBAction func twitterLogInTapped(sender: AnyObject)
     {
@@ -46,7 +43,7 @@ class ViewController: UIViewController {
                     println("Session : \(session)")
                     
                     
-                    HUDController.sharedController.show()
+                    PKHUD.sharedHUD.show()
                     Twitter.sharedInstance().APIClient.loadUserWithID(session.userID, completion: { (user : TWTRUser!, error :NSError!) -> Void in
                         
                         println("USER info TWITTER : \(user.profileImageLargeURL)")
@@ -67,14 +64,14 @@ class ViewController: UIViewController {
                     
                 } else {
                     println("error: \(error.localizedDescription)");
-                    HUDController.sharedController.hide(animated: true)
+                    PKHUD.sharedHUD.hide(animated: true)
                 }
             }
 
         }
         else{
             self.alertWithTitle("Bağlantı Hatası", message: "Lütfen internet bağlantınızı kontrol ediniz")
-            HUDController.sharedController.hide(animated: true)
+            PKHUD.sharedHUD.hide(animated: true)
 
         }
         
@@ -84,24 +81,56 @@ class ViewController: UIViewController {
     {
       if IJReachability.isConnectedToNetwork()
         {
-            if (FBSession.activeSession().state == FBSessionState.Open || FBSession.activeSession().state == FBSessionState.OpenTokenExtended)
+            
+            if (FBSDKAccessToken.currentAccessToken() != nil)
             {
-                // Close the session and remove the access token from the cache
-                // The session state handler (in the app delegate) will be called automatically
-                FBSession.activeSession().closeAndClearTokenInformation()
-                facebookLabel.text! = "Facebook ile giriş"
-                
+                // User is already logged in, do work such as go to next view controller.
             }
-            else{
-                
-                HUDController.sharedController.show()
+            else
+            {
+                PKHUD.sharedHUD.show()
+
+                let loginManager = FBSDKLoginManager()
+                loginManager.logInWithReadPermissions(["public_profile", "email", "user_friends"], handler: { (result : FBSDKLoginManagerLoginResult!, error : NSError!) -> Void in
+                    
+                     let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+                    
+                    graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+                        
+                        if ((error) != nil)
+                        {
+                            // Process error
+                            println("Error: \(error)")
+                        }
+                        else
+                        {
+                            self.user.name = result["first_name"]as! String
+                            self.user.surname = result["last_name"] as! String
+                            self.user.email = result["email"] as! String
+                            self.user.id = result["id"] as! String
+                            
+                            //Facebook ile giriş yaptıktan sonra servise post edip kaydı gerçekleştiriyorz
+                            self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, email: self.user.email, code: self.user.code)
+                            
+                            println("fetched user: \(result)")
+                            let userName : NSString = result.valueForKey("name") as! NSString
+                            println("User Name is: \(userName)")
+                            let userEmail : NSString = result.valueForKey("email") as! NSString
+                            println("User Email is: \(userEmail)")
+                        }
+                    })
+                    
+                })
+            }
+            
+            /*
 
                 // Open a session showing the user the login UI
                 // You must ALWAYS ask for public_profile permissions when opening a session
                 FBSession.openActiveSessionWithReadPermissions(["public_profile, email"], allowLoginUI: true, completionHandler: {
                     (session:FBSession!, state:FBSessionState, error:NSError!) in
                     
-                    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                     // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
                     appDelegate.sessionStateChanged(session, state: state, error: error)
                     
@@ -112,10 +141,10 @@ class ViewController: UIViewController {
                         let request = FBRequest(session: FBSession.activeSession(), graphPath: "/me")
                         request.startWithCompletionHandler({ (connection, result, error) -> Void in
                             
-                            self.user.name = result["first_name"] as String
-                            self.user.surname = result["last_name"] as String
-                            self.user.email = result["email"] as String
-                            self.user.id = result["id"] as String
+                            self.user.name = result["first_name"]as! String
+                            self.user.surname = result["last_name"] as! String
+                            self.user.email = result["email"] as! String
+                            self.user.id = result["id"] as! String
                             
                             //Facebook ile giriş yaptıktan sonra servise post edip kaydı gerçekleştiriyorz
                             self.registerUser(self.user.name, surname: self.user.surname, id: self.user.id, email: self.user.email, code: self.user.code)
@@ -124,12 +153,12 @@ class ViewController: UIViewController {
                     }
                     
                 })
-            }
+            */
         }
         else
         {
             self.alertWithTitle("Bağlantı Hatası", message: "Lütfen internet bağlantınızı kontrol ediniz")
-            HUDController.sharedController.hide(animated: true)
+            PKHUD.sharedHUD.hide(animated: true)
 
         }
         
@@ -165,13 +194,13 @@ class ViewController: UIViewController {
                 if let json = data as? NSDictionary {
                     if let info = json["user"] as? NSArray
                     {
-                        let dic : NSDictionary = info[0] as NSDictionary
-                        self.user.token = dic["token"] as String
+                        let dic : NSDictionary = info[0] as! NSDictionary
+                        self.user.token = dic["token"] as! String
                         
                         println("info : \(info)")
                     }
                     
-                    var message = json["message"]? as String
+                    var message = json["message"] as! String
                     println("message : \(message)")
                 }
                 
@@ -179,7 +208,7 @@ class ViewController: UIViewController {
                 
                 self.saveDefaults(self.user)
                 
-                HUDController.sharedController.hide(animated: true)
+                PKHUD.sharedHUD.hide(animated: true)
                 self.goDetailPage()
                 
             } else {

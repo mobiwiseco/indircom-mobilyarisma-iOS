@@ -276,7 +276,7 @@ class DetailPageVC: UIViewController{
         
         if(segue.identifier == "InfoPageVC"){
             
-            let infoPage = segue.destinationViewController as InfoPageVC
+            let infoPage = segue.destinationViewController as! InfoPageVC
             var currentApp : App = appList[self.currentPosition]
             infoPage.currentApp = currentApp
             
@@ -284,7 +284,7 @@ class DetailPageVC: UIViewController{
         
         else if(segue.identifier == "AboutPageVC")
         {
-            let aboutPage = segue.destinationViewController as AboutPageVC
+            let aboutPage = segue.destinationViewController as! AboutPageVC
             
         }
         

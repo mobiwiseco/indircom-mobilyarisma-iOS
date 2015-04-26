@@ -3,16 +3,15 @@
 
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'IndircomMobilYarisma' do
-
-
-pod 'Facebook-iOS-SDK', '~>3.23.2'
-pod 'pop', '~> 1.0'
-pod 'SDWebImage', '~>3.7'
+target 'indir.comYarisma' do
+    
+    pod 'Facebook-iOS-SDK'
+    pod 'pop', '~> 1.0'
+    pod 'SDWebImage', '~>3.7'
 
 end
 
-target 'IndircomMobilYarismaTests' do
+target 'indir.comYarismaTests' do
 
 end
 

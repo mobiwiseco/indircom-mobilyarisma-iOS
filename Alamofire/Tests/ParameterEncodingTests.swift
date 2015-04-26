@@ -40,7 +40,7 @@ class AlamofireURLParameterEncodingTestCase: XCTestCase {
     func testURLParameterEncodeNilParameters() {
         let (URLRequest, error) = self.encoding.encode(self.URLRequest, parameters: nil)
 
-        XCTAssertNil(URLRequest.URL.query?, "query should be nil")
+        XCTAssertNil(URLRequest.URL!.query?, "query should be nil")
     }
 
     func testURLParameterEncodeOneStringKeyStringValueParameter() {

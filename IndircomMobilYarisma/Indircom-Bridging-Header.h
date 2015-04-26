@@ -9,9 +9,11 @@
 #ifndef IndircomMobilYarisma_Indircom_Bridging_Header_h
 
 #import <Foundation/Foundation.h>
-#import <FacebookSDK.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <pop/POP.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "PKHUD.h"
 
 #define IndircomMobilYarisma_Indircom_Bridging_Header_h
 

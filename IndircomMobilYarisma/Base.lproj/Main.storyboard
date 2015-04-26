@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y2a-Ma-3pR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y2a-Ma-3pR">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -15,7 +15,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="indir_com_Yarıs_ma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="indir_comYarisma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -167,7 +167,7 @@
         <!--Thanks PageVC-->
         <scene sceneID="ara-k2-k6D">
             <objects>
-                <viewController id="hEj-Ef-EuN" customClass="ThanksPageVC" customModule="indir_com_Yarıs_ma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hEj-Ef-EuN" customClass="ThanksPageVC" customModule="indir_comYarisma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fe0-vb-CeI"/>
                         <viewControllerLayoutGuide type="bottom" id="FsX-7C-z0h"/>
@@ -236,7 +236,7 @@
         <!--Detail PageVC-->
         <scene sceneID="zd4-DT-1F4">
             <objects>
-                <viewController storyboardIdentifier="DetailPageVC" id="Q9O-UD-6xO" customClass="DetailPageVC" customModule="indir_com_Yarıs_ma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailPageVC" id="Q9O-UD-6xO" customClass="DetailPageVC" customModule="indir_comYarisma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eGu-Fs-kZQ"/>
                         <viewControllerLayoutGuide type="bottom" id="d3H-Ru-1zv"/>
@@ -255,7 +255,7 @@
                                     <constraint firstAttribute="height" constant="200" id="e9v-7P-x3t"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWU-2J-ofT">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWU-2J-ofT">
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
                                 <color key="textColor" red="0.23921568627450981" green="0.23921568627450981" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -393,7 +393,7 @@
         <!--About PageVC-->
         <scene sceneID="RaS-Jy-5sp">
             <objects>
-                <viewController storyboardIdentifier="AboutPageVC" id="QxT-bd-zui" customClass="AboutPageVC" customModule="indir_com_Yarıs_ma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutPageVC" id="QxT-bd-zui" customClass="AboutPageVC" customModule="indir_comYarisma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3ZW-3t-eaJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Smc-tL-tr2"/>
@@ -489,7 +489,7 @@
         <!--Info PageVC-->
         <scene sceneID="Ys5-cQ-m75">
             <objects>
-                <viewController storyboardIdentifier="InfoPageVC" id="m8i-i8-04F" customClass="InfoPageVC" customModule="indir_com_Yarıs_ma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoPageVC" id="m8i-i8-04F" customClass="InfoPageVC" customModule="indir_comYarisma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2gS-uH-HOB"/>
                         <viewControllerLayoutGuide type="bottom" id="9PA-J5-OYD"/>
@@ -530,9 +530,8 @@
                                 <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFi-V0-Uaa">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFi-V0-Uaa">
                                 <rect key="frame" x="16" y="327" width="568" height="205"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

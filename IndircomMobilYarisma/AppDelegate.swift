@@ -21,12 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        FBLoginView.self
-        FBProfilePictureView.self
-        
         Fabric.with([Twitter()])
         
         self.CheckIfLoggedIn()
+        
+        /*
         
         // Whenever a person opens app, check for a cached session
         if (FBSession.activeSession().state == FBSessionState.Open || FBSession.activeSession().state == FBSessionState.OpenTokenExtended) {
@@ -38,17 +37,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 
             })
-        }
+        } */
         
-         return true
+        
+         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: NSString?, annotation: AnyObject) -> Bool
-    {
-        var wasHandled:Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
-    
-        return true
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        
+        var wasHandled:Bool = FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        return wasHandled
+        
     }
    
 
@@ -68,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FBSDKAppEvents.activateApp()
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -87,6 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
         */
+    
+    /*
     
     func sessionStateChanged(session:FBSession, state:FBSessionState, error:NSError?){
         if ((error) != nil){
@@ -115,6 +119,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+
+*/
     
     func CheckIfLoggedIn()
     {
@@ -129,9 +135,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func goDetailPage()
     {
-        let navCon = self.window?.rootViewController as UINavigationController
+        let navCon = self.window?.rootViewController as! UINavigationController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let votePage = storyboard.instantiateViewControllerWithIdentifier("DetailPageVC") as DetailPageVC
+        let votePage = storyboard.instantiateViewControllerWithIdentifier("DetailPageVC") as! DetailPageVC
         self.window?.rootViewController = votePage
 //        navCon.pushViewController(votePage, animated: true)
         
